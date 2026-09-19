@@ -4,6 +4,12 @@
 
 **简体中文** · [English](README_EN.md)
 
+> **English** — HelixCraft is an AI-powered desktop application for gene engineering and molecular
+> cloning research: vector map editing, sequence analysis, primer design, restriction digestion and
+> gel electrophoresis simulation, cloning workflows, Sanger chromatogram analysis, species data
+> lookup, protein analysis and an optional AI assistant — all data stored locally, interface in 20
+> languages. **[Read the full English documentation →](README_EN.md)**
+
 HelixCraft 是一款面向分子生物学与基因工程研究的桌面软件，帮助你完成从「查基因 → 读序列 →
 设计克隆 → 虚拟组装 → 实验验证 → 数据管理」的完整工作流：载体图谱编辑、序列分析、引物设计、
 酶切与凝胶电泳模拟、克隆工作流、测序峰图分析、物种数据检索、蛋白分析，以及可选的 AI 助手。
