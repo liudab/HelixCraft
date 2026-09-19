@@ -37,7 +37,7 @@ Typical scenarios:
 ## Download
 
 The latest version is always published on the
-[**Releases · `latest` channel**](https://github.com/liudab/HelixCraft/releases/tag/latest):
+[**Releases · `latest` channel**](releases/tag/latest):
 
 | Platform | Installer | How to install |
 |---|---|---|
@@ -46,7 +46,7 @@ The latest version is always published on the
 
 The `latest` channel is also the data source of the in-app "check for updates"; its assets are
 replaced on every release. Older versions are archived under their own
-[release tags](https://github.com/liudab/HelixCraft/releases).
+[release tags](releases).
 
 ### Verifying the download
 
@@ -304,6 +304,11 @@ without plugins, genes of any species can be imported directly from NCBI.
 This repository hosts **installers and the online update manifest only** — it does not contain the
 application source code. The `latest` tag's release is the auto-update channel (assets replaced on
 every version); `v<version>` tags are archived historical releases.
+
+The repository is mirrored on [GitHub](https://github.com/liudab/HelixCraft) and
+[GitCode](https://gitcode.com/BohanLab/HelixCraft) with installers published on both. The in-app
+"check for updates" reads the GitHub `latest` channel (downloads go through acceleration mirrors
+automatically).
 
 ## License
 

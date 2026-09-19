@@ -33,7 +33,7 @@ HelixCraft 是一款面向分子生物学与基因工程研究的桌面软件，
 
 ## 下载
 
-最新版本始终在 [**Releases · latest 频道**](https://github.com/liudab/HelixCraft/releases/tag/latest)：
+最新版本始终在 [**Releases · latest 频道**](releases/tag/latest)：
 
 | 平台 | 安装包 | 安装方式 |
 |---|---|---|
@@ -41,7 +41,7 @@ HelixCraft 是一款面向分子生物学与基因工程研究的桌面软件，
 | Debian / Ubuntu（x86_64） | `helixcraft_<版本>_amd64.deb` | 双击交给系统图形化安装器，或 `sudo apt install ./<文件>` |
 
 `latest` 频道同时是应用内「检查更新」的数据源，资产随每个版本覆盖式替换。历史版本见
-[Releases 列表](https://github.com/liudab/HelixCraft/releases)，每个版本都有独立存档。
+[Releases 列表](releases)，每个版本都有独立存档。
 
 ### 校验下载
 
@@ -251,6 +251,10 @@ FASTA（`.fasta` `.fa`）、SnapGene（`.dna`）、EMBL（`.embl`）→ 序列�
 
 本仓库仅用于**分发安装包与在线更新清单**，不包含源代码。其中 `latest` 标签的 Release 是在线
 更新频道（资产随版本覆盖式替换），`v<版本>` 标签的 Release 是历史版本存档。
+
+同一仓库同步托管于 [GitHub](https://github.com/liudab/HelixCraft) 与
+[GitCode](https://gitcode.com/BohanLab/HelixCraft)，安装包两边同步发布；应用内「检查更新」
+的数据源为 GitHub `latest` 频道（自动经加速镜像下载）。
 
 ## 许可证
 
