@@ -2,7 +2,7 @@
 
 **AI-powered gene engineering desktop software**
 
-[简体中文](README.md) · **English**
+[简体中文](README.md) · **English** · [日本語](README_ja.md) · [한국어](README_ko.md) · [Français](README_fr.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Português](README_pt.md) · [Русский](README_ru.md) · [Italiano](README_it.md) · [العربية](README_ar.md) · [हिन्दी](README_hi.md) · [ไทย](README_th.md) · [Tiếng Việt](README_vi.md) · [Bahasa Indonesia](README_id.md) · [Türkçe](README_tr.md) · [Nederlands](README_nl.md) · [Polski](README_pl.md) · [Svenska](README_sv.md) · [Čeština](README_cs.md)
 
 HelixCraft is a desktop application for molecular biology and gene engineering research. It supports
 the complete workflow from *finding a gene → reading sequences → designing clones → in-silico
@@ -296,8 +296,11 @@ without plugins, genes of any species can be imported directly from NCBI.
 
 ## Interface languages
 
-简体中文、English、日本語、한국어、Français、Deutsch、Español、Português、Русский、Italiano、
-العربية、हिन्दी、ไทย、Tiếng Việt、Bahasa Indonesia、Türkçe、Nederlands、Polski、Svenska、Čeština.
+All feature modules have been fully localized into 20 languages as of v0.3.7: 简体中文, English,
+日本語, 한국어, Français, Deutsch, Español, Português, Русский, Italiano, العربية, हिन्दी, ไทย,
+Tiếng Việt, Bahasa Indonesia, Türkçe, Nederlands, Polski, Svenska, Čeština. Switch any time under
+"Settings → Language"; the installer's first screen also offers a language choice. Localized
+project descriptions are linked in the language bar at the top.
 
 ## About this repository
 

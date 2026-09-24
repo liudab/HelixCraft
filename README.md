@@ -2,7 +2,7 @@
 
 **AI 赋能的基因工程辅助桌面软件** · AI-powered gene engineering tools
 
-**简体中文** · [English](README_EN.md)
+**简体中文** · [English](README_EN.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [Français](README_fr.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Português](README_pt.md) · [Русский](README_ru.md) · [Italiano](README_it.md) · [العربية](README_ar.md) · [हिन्दी](README_hi.md) · [ไทย](README_th.md) · [Tiếng Việt](README_vi.md) · [Bahasa Indonesia](README_id.md) · [Türkçe](README_tr.md) · [Nederlands](README_nl.md) · [Polski](README_pl.md) · [Svenska](README_sv.md) · [Čeština](README_cs.md)
 
 > **English** — HelixCraft is an AI-powered desktop application for gene engineering and molecular
 > cloning research: vector map editing, sequence analysis, primer design, restriction digestion and
@@ -37,8 +37,8 @@ HelixCraft 是一款面向分子生物学与基因工程研究的桌面软件，
 
 | 平台 | 安装包 | 安装方式 |
 |---|---|---|
-| Windows 10 / 11（x64） | `HelixCraft.Setup.<版本>.exe` | 双击运行安装向导 |
-| Debian / Ubuntu（x86_64） | `helixcraft_<版本>_amd64.deb` | 双击交给系统图形化安装器，或 `sudo apt install ./<文件>` |
+| Windows 10 / 11（x64） | `HelixCraft.Setup.<version>.exe` | 双击运行安装向导 |
+| Debian / Ubuntu（x86_64） | `helixcraft_<version>_amd64.deb` | 双击交给系统图形化安装器，或 `sudo apt install ./<file>` |
 
 `latest` 频道同时是应用内「检查更新」的数据源，资产随每个版本覆盖式替换。历史版本见
 [Releases 列表](releases)，每个版本都有独立存档。
@@ -50,9 +50,9 @@ SHA-256 摘要，可用于校验下载是否完整、是否被篡改。例如：
 
 ```bash
 # Linux
-sha256sum helixcraft_<版本>_amd64.deb
+sha256sum helixcraft_<version>_amd64.deb
 # Windows PowerShell
-Get-FileHash .\HelixCraft.Setup.<版本>.exe -Algorithm SHA256
+Get-FileHash .\HelixCraft.Setup.<version>.exe -Algorithm SHA256
 ```
 
 ## 安装
@@ -60,7 +60,7 @@ Get-FileHash .\HelixCraft.Setup.<版本>.exe -Algorithm SHA256
 ### Windows
 
 - 系统要求：Windows 10 及以上（x64）。
-- 运行 `HelixCraft.Setup.<版本>.exe`，按向导完成安装（默认为所有用户安装，需管理员权限）。
+- 运行 `HelixCraft.Setup.<version>.exe`，按向导完成安装（默认为所有用户安装，需管理员权限）。
 - 安装向导提供可选的**示例数据**组件（示例载体、克隆工作流与物种数据插件），方便新用户直接
   上手体验；示例数据只在对应内容不存在时导入，**永远不会覆盖你已建立的数据**。
 - **覆盖安装会保留全部既有数据**。数据目录为 `%APPDATA%\HelixCraft`（物种子库位于
@@ -69,7 +69,7 @@ Get-FileHash .\HelixCraft.Setup.<版本>.exe -Algorithm SHA256
 ### Linux（Debian / Ubuntu，x86_64）
 
 - 双击 `.deb` 会交由系统的图形化安装器（GNOME Software / App Center / KDE Discover / GDebi）；
-  终端等价命令：`sudo apt install ./helixcraft_<版本>_amd64.deb`。
+  终端等价命令：`sudo apt install ./helixcraft_<version>_amd64.deb`。
 - 程序安装到 `/opt/HelixCraft`，用户数据在 `~/.config/HelixCraft`，**卸载不会删除**。
 - 界面以中文为主，建议系统装有 CJK 字体（包内声明 `Recommends: fonts-noto-cjk`；用
   `dpkg -i` 直接安装不会带上依赖，请改用 `apt install`）。
@@ -244,13 +244,15 @@ FASTA（`.fasta` `.fa`）、SnapGene（`.dna`）、EMBL（`.embl`）→ 序列�
 
 ## 界面语言
 
-简体中文、English、日本語、한국어、Français、Deutsch、Español、Português、Русский、Italiano、
-العربية、हिन्दी、ไทย、Tiếng Việt、Bahasa Indonesia、Türkçe、Nederlands、Polski、Svenska、Čeština。
+全部功能模块自 v0.3.7 起完成 20 种语言的完整覆盖：简体中文、English、日本語、한국어、Français、
+Deutsch、Español、Português、Русский、Italiano、العربية、हिन्दी、ไทย、Tiếng Việt、Bahasa Indonesia、
+Türkçe、Nederlands、Polski、Svenska、Čeština。可在「设置 → 语言」中随时切换，重启安装向导首屏
+也可选择界面语言。各语言的说明文档见文首语言导航。
 
 ## 关于本仓库
 
 本仓库仅用于**分发安装包与在线更新清单**，不包含源代码。其中 `latest` 标签的 Release 是在线
-更新频道（资产随版本覆盖式替换），`v<版本>` 标签的 Release 是历史版本存档。
+更新频道（资产随版本覆盖式替换），`v<version>` 标签的 Release 是历史版本存档。
 
 同一仓库同步托管于 [GitHub](https://github.com/liudab/HelixCraft) 与
 [GitCode](https://gitcode.com/BohanLab/HelixCraft)，安装包两边同步发布；应用内「检查更新」
