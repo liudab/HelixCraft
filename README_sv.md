@@ -7,6 +7,33 @@
 > HelixCraft är en skrivbordsapplikation för forskning inom molekylärbiologi och genteknik. Den täcker hela arbetsflödet — från att hitta en gen och läsa sekvenser till att designa kloneringar, göra virtuell assembly, verifiera experiment och hantera data: redigering av vektorkartor, sekvensanalys, primerdesign, simulering av restriktionsklyvning och gelelektrofores, kloningsarbetsflöden, analys av sekvenseringskromatogram, uppslag i artdata, proteinanalys och en valfri AI-assistent. All data lagras lokalt på din egen dator — inget konto behövs och inget moln krävs; gränssnittet finns på 20 språk.
 > Fullständig dokumentation: [简体中文](README.md) · [English](README_EN.md)
 
+## Nyheter i v0.5.0
+
+- **SWISS-MODEL-strukturprediktion**: proteiner utan strukturfil kan modelleras online från den sparade aminosyrasekvensen; resultatet sparas lokalt och kopplas till sekvensfilen och dess gen. Befintliga jobb kan återupptas med projekt-ID.
+- **ELN/LIMS-projektledning**: materialregister, strukturerade mätningar, fasarbetsytor, mallar, framsteg och rapporter; **BLAST** onlinesökning (med Primer-BLAST-förkontroll) och fullständig sekvensverifiering med AI-byggrapport.
+- **Vägledning och plattformar**: kursliknande guidade turer (kapitel/pauser); macOS 13+ universal build (Intel och Apple Silicon); gränssnittet finns kvar på 20 språk.
+
+## Funktioner i korthet
+
+- **Hämta geninformation**: sökning i lokala genbiblioteket, import av NCBI Gene/accession, sökning via artpluginer (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), korsreferenser, uttrycksdata (ePlant / Expression Atlas), UniProt-annoteringar och en gensida med alleler, fenotyper, GO/InterPro och referenser.
+- **Vektorkartor och sekvensredigering**: länkad cirkulär/linjär karta och sekvenstext; restriktionsställen, primerbindning, ORF:er och mutationer överlagrade; smart komponentannotering; publiceringsklara SVG/PDF/PNG-exporter.
+- **Kloningsdesign**: arbetsflödescanvas med 30 noder för Gibson, Golden Gate, T4-ligering, TA/TOPO, Gateway LR/BP och BioBrick; realtidssimulering av PCR, digestion och assembly före bänkarbete.
+- **Primerdesign**: allmän-, klonings- och qPCR-läge med 50+ parametrar, Tm/GC/hairpin/dimer-poäng, exonjunction-strategier och in-silico PCR-off-targetkontroll.
+- **Sekvenseringsverifiering**: AB1-kromatogramvisare, CAP3-readassembly, fullkedjeverifiering av rekombinanta vektorer (täckning, fogar, varianter, referensdrift) med AI-byggrapport, ClustalW-alignering och träd.
+- **Gelanalys och -simulering**: deep learning-detektering av fickor/band, fragmentstorleks- och DNA-mängdsbestämning från en markör, virtuell gelelektrofores av digestionsresultat.
+- **Protein struktur och analys**: Mol* 3D-visare för RCSB PDB / AlphaFold DB och lokala PDB/mmCIF-filer, synkroniserade topologi ↔ sekvens ↔ 3D-vyer, DSSP-sekundärstruktur, avståndsmätning och anpassad restfärgning; **SWISS-MODEL-prediktion** när struktur saknas; fysikalisk-kemisk, lokaliserings- och PTM-analys; `.hcp`-proteinpaket.
+- **Laboratoriedata och samarbete**: ELN/LIMS-projektledning (material, strukturerade mätningar, fasarbetsytor, mallar, rapporter), vektor-/gen-/primer-/sekvenseringsdatabaser, krypterad LAN-överföring, automatiska säkerhetskopior; kursliknande handledningar; valfri AI-assistent; gränssnitt på 20 språk.
+
+## Skärmbilder
+
+![Projektledning och ELN](screenshots/01-projects.png)
+
+![Vektorkarta och sekvensredigerare](screenshots/03-vector-editor.png)
+
+![Kloningsarbetsflöde](screenshots/06-workflow.png)
+
+![Primerbibliotek](screenshots/05-primers.png)
+
 ## Vad du kan använda den till
 
 - Öppna en plasmidfil och se dess komponenter och restriktionsklyvningsställen på en gång — och exportera kartan som publikationsklar figur;
@@ -19,11 +46,12 @@
 
 ## Nedladdning
 
-Den senaste versionen finns alltid i [**Releases · kanalen `latest`**](releases/tag/latest):
+Den senaste versionen finns alltid i [**Releases · kanalen `latest`**](releases):
 
 | Plattform | Installationspaket | Installation |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Kör installationsguiden genom att dubbelklicka |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Öppna `.dmg` och dra HelixCraft till Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Dubbelklicka så övertar systemets grafiska installationsprogram, eller `sudo apt install ./<fil>` |
 
 Kanalen `latest` är också datakällan för appens inbyggda ”sök efter uppdateringar”. Äldre versioner finns i [Releases-listan](releases), där varje version har ett eget arkiv. `latest.json` i samma katalog är uppdateringsmanifestet som appen använder; det listar varje installerares filnamn, storlek och SHA-256-kontrollsumma, så att du kan kontrollera att nedladdningen är komplett och oförändrad.
@@ -35,6 +63,12 @@ Kanalen `latest` är också datakällan för appens inbyggda ”sök efter uppda
 - `HelixCraft.Setup.<version>.exe` körs genom att dubbelklicka (kräver Windows 10 eller senare, x64); följ guiden — standardinstallation för alla användare, administratörsrättigheter krävs.
 - Guiden erbjuder en valfri komponent med **exempeldata** (exempelvektorer, kloningsarbetsflöden och artdataplugin) så att nya användare kan komma igång direkt. Exempeldata importeras bara när motsvarande innehåll inte redan finns — **de skriver aldrig över data du själv har skapat**.
 - **Installeras programmet över en befintlig installation bevaras alla data.** Datakatalogen är `%APPDATA%\HelixCraft` (artunderdatabaser ligger i `%APPDATA%\HelixCraftData`); avinstallationen tar inte bort den.
+
+### macOS
+
+- Krav: macOS 13 eller senare (universal: Intel och Apple Silicon).
+- Öppna `HelixCraft.Setup.<version>.dmg` och dra **HelixCraft** till **Applications**.
+- Bygget är ad-hoc-signerat (inte notariserat): vid första start, högerklicka på appen och välj **Öppna** (eller tillåt den i Systeminställningar → Integritet och säkerhet). Användardata finns i `~/Library/Application Support/HelixCraft` och tas inte bort vid avinstallation.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -82,6 +116,7 @@ Genannoteringar och expressionsdata ansluts via artdataplugin, som kan installer
 
 | Riktning | Format |
 |---|---|
+- **SWISS-MODEL-strukturprediktion**: för proteiner utan strukturfil, modellera den aktuella aminosyrasekvensen online; resultatet sparas lokalt och kopplas till sekvensfilen och genen.
 | Öppna/importera | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), kromatogram (`.ab1`), primer-Excel (`.xlsx`), proteinannoteringar (UniProtKB/GFF3/InterProScan/GenPept), proteinstrukturer (PDB/mmCIF), HelixCraft-paket (genpaket/`.hcvec` vektorpaket/`.hcp` proteinpaket) |
 | Spara/exportera | GenBank, FASTA, SnapGene `.dna`, EMBL, kartfigurer (SVG/PDF/PNG/JPG/BMP/TIF), annoterade gelfigurer, primer-Excel, proteinannoteringar i 6 format, genpaket/`.hcvec`/`.hcp`, statisk webbsida med gendetaljer, fullständig säkerhetskopia som ZIP |
 

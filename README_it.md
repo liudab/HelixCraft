@@ -7,6 +7,33 @@ Software desktop di supporto all'ingegneria genetica basato sull'IA · AI-powere
 > HelixCraft è un software desktop per la ricerca in biologia molecolare e ingegneria genetica che copre l'intero flusso di lavoro «trovare il gene → leggere la sequenza → progettare il clonaggio → assemblaggio in silico → verifica sperimentale → gestione dei dati»: editor delle mappe dei vettori, analisi delle sequenze, progettazione dei primer, simulazione di digestioni di restrizione ed elettroforesi su gel, flussi di lavoro di clonaggio, analisi dei cromatogrammi di sequenziamento, analisi delle proteine e un assistente IA opzionale. Tutti i dati restano memorizzati sul tuo computer, senza registrazione di account né dipendenza dal cloud; l'interfaccia è disponibile in 20 lingue.
 > Documentazione completa: [简体中文](README.md) · [English](README_EN.md)
 
+## Novità della v0.5.0
+
+- **Previsione struttura SWISS-MODEL**: le proteine senza file di struttura possono essere modellate online dalla sequenza amminoacidica salvata; il risultato viene salvato localmente e collegato al file di sequenza e al suo gene. I job esistenti possono essere ripresi tramite ID progetto.
+- **Gestione progetti ELN/LIMS**: registro materiali, misurazioni strutturate, spazi di lavoro per fase, modelli, avanzamento e report; **BLAST** online (con pre-controllo Primer-BLAST) e verifica completa della sequenza con report di costruzione AI.
+- **Guida e piattaforme**: tour guidati in stile corso (capitoli/pause); build universal macOS 13+ (Intel e Apple Silicon); interfaccia ancora in 20 lingue.
+
+## Funzioni principali in sintesi
+
+- **Recupero informazioni genetiche**: ricerca nella libreria locale, import NCBI Gene/accession, ricerca tramite plugin di specie (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), ID e riferimenti incrociati, dati di espressione (ePlant / Expression Atlas), annotazioni UniProt e una pagina del gene con alleli, fenotipi, GO/InterPro e riferimenti.
+- **Mappe vettoriali ed editing di sequenze**: mappa circolare/lineare collegata al testo della sequenza; siti di restrizione, legame dei primer, ORF e mutazioni sovrapposti; annotazione intelligente dei componenti; export SVG/PDF/PNG di qualità pubblicazione.
+- **Progettazione del clonaggio**: canvas di workflow a 30 nodi per Gibson, Golden Gate, ligazione T4, TA/TOPO, Gateway LR/BP e BioBrick; simulazione in tempo reale di PCR, digestione e assemblaggio prima del banco.
+- **Progettazione primer**: modalità generale, clonaggio e qPCR con 50+ parametri, punteggio Tm/GC/hairpin/dimero, strategie exon-junction e controllo off-target con PCR in silico.
+- **Verifica del sequenziamento**: visualizzatore di cromatogrammi AB1, assemblaggio reads CAP3, verifica completa del vettore ricombinante (copertura, giunzioni, varianti, deriva del riferimento) con report di costruzione AI, allineamento ClustalW e alberi.
+- **Analisi e simulazione del gel**: rilevamento corsie/bande con deep learning, quantificazione di dimensione e quantità di DNA da un marker, elettroforesi virtuale delle digestioni.
+- **Struttura e analisi delle proteine**: visualizzatore 3D Mol* per RCSB PDB / AlphaFold DB e file PDB/mmCIF locali, viste topologia ↔ sequenza ↔ 3D sincronizzate, struttura secondaria DSSP, misura delle distanze e colorazione dei residui; **previsione SWISS-MODEL** in assenza di struttura; analisi fisico-chimica, localizzazione e PTM; pacchetti `.hcp`.
+- **Dati di laboratorio e collaborazione**: gestione progetti ELN/LIMS (materiali, misurazioni strutturate, spazi per fase, modelli, report), database vettori/geni/primer/sequenziamento, trasferimento LAN cifrato, backup automatici; tutorial guidati; assistente AI opzionale; interfaccia in 20 lingue.
+
+## Screenshot
+
+![Gestione progetti ed ELN](screenshots/01-projects.png)
+
+![Mappa del vettore ed editor di sequenza](screenshots/03-vector-editor.png)
+
+![Workflow di clonaggio](screenshots/06-workflow.png)
+
+![Libreria primer](screenshots/05-primers.png)
+
 ## Cosa puoi fare con HelixCraft
 
 - Aprire il file di un plasmide e vedere a colpo d'occhio la composizione dei suoi elementi e i siti di restrizione, per poi esportare figure della mappa pronte per la pubblicazione.
@@ -19,11 +46,12 @@ Software desktop di supporto all'ingegneria genetica basato sull'IA · AI-powere
 
 ## Download
 
-La versione più recente è sempre pubblicata sul canale [**Releases · latest**](releases/tag/latest):
+La versione più recente è sempre pubblicata sul canale [**Releases · latest**](releases):
 
 | Piattaforma | Programma di installazione | Modalità di installazione |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Doppio clic per avviare la procedura guidata di installazione |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Apri il `.dmg` e trascina HelixCraft in Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Doppio clic per passarlo al programma di installazione grafico di sistema, oppure `sudo apt install ./<file>` |
 
 Il canale `latest` è anche la sorgente dati della funzione «Verifica aggiornamenti» integrata nell'app, e i suoi file vengono sostituiti integralmente a ogni versione; le versioni storiche sono conservate nell'[elenco delle Releases](releases). Nella stessa cartella, `latest.json` è il manifesto degli aggiornamenti usato dall'applicazione: riporta per ogni programma di installazione il nome del file, la dimensione in byte e il digest SHA-256, così da poter verificare che il download sia completo e non sia stato manomesso.
@@ -35,6 +63,12 @@ Il canale `latest` è anche la sorgente dati della funzione «Verifica aggiornam
 - Esegui `HelixCraft.Setup.<version>.exe` e segui la procedura guidata (per impostazione predefinita l'installazione è per tutti gli utenti e richiede i permessi di amministratore).
 - La procedura guidata offre un componente opzionale di **dati di esempio** (vettori di esempio, flussi di lavoro di clonaggio e plugin di specie) per permettere ai nuovi utenti di iniziare subito; i dati di esempio vengono importati solo se il contenuto corrispondente non esiste ancora e **non sovrascrivono mai i dati che hai già creato**.
 - **Installando sopra una copia esistente tutti i dati vengono conservati.** La directory dei dati è `%APPDATA%\HelixCraft` (i sottodatabase delle specie si trovano in `%APPDATA%\HelixCraftData`); la disinstallazione non la elimina.
+
+### macOS
+
+- Requisiti: macOS 13 o successivo (universal: Intel e Apple Silicon).
+- Apri `HelixCraft.Setup.<version>.dmg` e trascina **HelixCraft** in **Applications**.
+- La build è firmata ad-hoc (non notarizzata): al primo avvio fai clic destro sull'app e scegli **Apri** (oppure consentila in Impostazioni di Sistema → Privacy e sicurezza). I dati utente si trovano in `~/Library/Application Support/HelixCraft` e non vengono rimossi alla disinstallazione.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -80,6 +114,7 @@ Le annotazioni dei geni e i dati di espressione vengono integrati tramite «plug
 
 | Direzione | Formati |
 |------|------|
+- **Previsione struttura SWISS-MODEL**: per proteine senza file di struttura, modella online la sequenza amminoacidica corrente; il risultato viene salvato localmente e collegato al file di sequenza e al gene.
 | Apertura / importazione | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), cromatogrammi (`.ab1`), Excel dei primer (`.xlsx`), annotazioni proteiche (UniProtKB / GFF3 / InterProScan / GenPept), strutture proteiche (PDB / mmCIF), pacchetti HelixCraft (pacchetto di geni / pacchetto di vettori `.hcvec` / pacchetto di proteine `.hcp`) |
 | Salvataggio / esportazione | GenBank, FASTA, SnapGene `.dna`, EMBL, immagini delle mappe (SVG / PDF / PNG / JPG / BMP / TIF), figure di gel annotate, Excel dei primer, annotazioni proteiche in 6 formati, pacchetto di geni / `.hcvec` / `.hcp`, pagina web statica dei dettagli del gene, ZIP di backup completo |
 

@@ -7,6 +7,33 @@ Phần mềm desktop hỗ trợ kỹ thuật di truyền nhờ AI · AI-powered 
 > HelixCraft là phần mềm desktop dành cho nghiên cứu sinh học phân tử và kỹ thuật di truyền, đồng hành trọn vẹn quy trình làm việc "tìm gen → đọc trình tự → thiết kế nhân dòng → lắp ghép ảo → xác minh bằng thí nghiệm → quản lý dữ liệu": chỉnh sửa bản đồ vector, phân tích trình tự, thiết kế primer, mô phỏng cắt enzyme giới hạn và điện di trên gel, quy trình nhân dòng, phân tích sắc ký đồ sequen, tra cứu dữ liệu loài, phân tích protein, cùng một trợ lý AI tùy chọn. Toàn bộ dữ liệu được lưu ngay trên máy tính của bạn — không cần đăng ký tài khoản, không phụ thuộc đám mây; giao diện hỗ trợ 20 ngôn ngữ.
 > Tài liệu đầy đủ: [简体中文](README.md) · [English](README_EN.md)
 
+## Có gì mới trong v0.5.0
+
+- **Dự đoán cấu trúc SWISS-MODEL**: protein chưa có tệp cấu trúc có thể được mô hình hóa trực tuyến từ trình tự axit amin đã lưu; kết quả được lưu cục bộ và liên kết với tệp trình tự cùng gen của nó. Có thể tiếp tục theo dõi tác vụ cũ bằng mã dự án.
+- **Quản lý dự án ELN/LIMS**: sổ vật tư, đo lường có cấu trúc, không gian theo giai đoạn, mẫu quy trình, tiến độ và báo cáo; **BLAST** trực tuyến (kèm kiểm tra trước Primer-BLAST) và xác minh trình tự toàn chuỗi với báo cáo xây dựng bằng AI.
+- **Hướng dẫn và nền tảng**: hướng dẫn dạng khóa học (chương/điểm dừng); bản dựng macOS 13+ universal (Intel và Apple Silicon); giao diện vẫn có 20 ngôn ngữ.
+
+## Khả năng chính
+
+- **Truy xuất thông tin gen**: tìm trong thư viện gen cục bộ, nhập NCBI Gene/accession, tra cứu qua plugin loài (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), ID và tham chiếu chéo, dữ liệu biểu hiện (ePlant / Expression Atlas), chú thích UniProt và trang chi tiết gen tổng hợp alen, kiểu hình, GO/InterPro và tài liệu tham khảo.
+- **Bản đồ vector và chỉnh sửa trình tự**: bản đồ vòng/ thẳng liên kết hai chiều với văn bản trình tự; vị trí cắt, liên kết primer, ORF và đột biến chồng lớp; chú thích thành phần thông minh; xuất SVG/PDF/PNG chất lượng công bố.
+- **Thiết kế nhân dòng**: canvas quy trình 30 nút cho Gibson, Golden Gate, nối T4, TA/TOPO, Gateway LR/BP và BioBrick; mô phỏng PCR, cắt và lắp ghép theo thời gian thực trước khi làm thí nghiệm.
+- **Thiết kế primer**: chế độ thường/nhân dòng/qPCR với 50+ tham số, chấm điểm Tm/GC/hairpin/dimer, chiến lược nối exon và kiểm tra off-target bằng in-silico PCR.
+- **Xác minh giải trình tự**: xem chromatogram AB1, lắp ghép read CAP3, xác minh toàn chuỗi vector tái tổ hợp (độ phủ, mối nối, biến thể, trôi tham chiếu) với báo cáo xây dựng bằng AI, căn chỉnh ClustalW và cây phát sinh.
+- **Phân tích và mô phỏng gel**: phát hiện giếng/băng bằng học sâu, định lượng kích thước và lượng DNA từ marker, điện di gel ảo cho kết quả cắt.
+- **Cấu trúc và phân tích protein**: trình xem 3D Mol* cho RCSB PDB / AlphaFold DB và tệp PDB/mmCIF cục bộ, đồng bộ topology ↔ trình tự ↔ 3D, cấu trúc bậc hai DSSP, đo khoảng cách và tô màu gốc; **dự đoán SWISS-MODEL** khi chưa có cấu trúc; phân tích lý hóa, định vị và PTM; gói protein `.hcp`.
+- **Dữ liệu phòng thí nghiệm và cộng tác**: quản lý dự án ELN/LIMS (vật tư, đo lường có cấu trúc, không gian theo giai đoạn, mẫu, báo cáo), cơ sở dữ liệu vector/gen/primer/giải trình tự, truyền LAN mã hóa, sao lưu tự động; hướng dẫn dạng khóa học; trợ lý AI tùy chọn; giao diện 20 ngôn ngữ.
+
+## Ảnh chụp màn hình
+
+![Quản lý dự án và ELN](screenshots/01-projects.png)
+
+![Bản đồ vector và trình soạn thảo trình tự](screenshots/03-vector-editor.png)
+
+![Quy trình nhân dòng](screenshots/06-workflow.png)
+
+![Thư viện primer](screenshots/05-primers.png)
+
 ## Bạn có thể làm gì với HelixCraft?
 
 - Mở tệp plasmid để nắm ngay cấu tạo các yếu tố và vị trí cắt enzyme, sau đó xuất hình bản đồ đạt chuẩn công bố khoa học.
@@ -19,11 +46,12 @@ Phần mềm desktop hỗ trợ kỹ thuật di truyền nhờ AI · AI-powered 
 
 ## Tải xuống
 
-Phiên bản mới nhất luôn được phát hành tại kênh [**Releases · latest**](releases/tag/latest):
+Phiên bản mới nhất luôn được phát hành tại kênh [**Releases · latest**](releases):
 
 | Nền tảng | Gói cài đặt | Cách cài đặt |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Nhấp đúp để chạy trình hướng dẫn cài đặt |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Mở `.dmg` và kéo HelixCraft vào Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Nhấp đúp để giao cho trình cài đặt đồ họa của hệ thống, hoặc `sudo apt install ./<tệp>` |
 
 Kênh `latest` đồng thời là nguồn dữ liệu của chức năng "kiểm tra cập nhật" trong ứng dụng, tài sản của kênh được thay thế trọn vẹn theo từng phiên bản; các phiên bản cũ xem tại [danh sách Releases](releases). Trong cùng thư mục, `latest.json` là bản kê khai cập nhật mà ứng dụng sử dụng, liệt kê tên tệp, số byte và mã băm SHA-256 của từng gói cài đặt, giúp bạn xác minh bản tải về có đầy đủ và không bị can thiệp.
@@ -35,6 +63,12 @@ Kênh `latest` đồng thời là nguồn dữ liệu của chức năng "kiểm
 - Chạy `HelixCraft.Setup.<version>.exe` và làm theo trình hướng dẫn (mặc định cài cho mọi người dùng, cần quyền quản trị viên).
 - Trình hướng dẫn cung cấp thành phần tùy chọn **dữ liệu mẫu** (vector mẫu, quy trình nhân dòng và plugin dữ liệu loài) để người dùng mới trải nghiệm ngay; dữ liệu mẫu chỉ được nhập khi nội dung tương ứng chưa tồn tại và **không bao giờ ghi đè dữ liệu bạn đã tạo**.
 - **Cài đè lên bản cũ vẫn giữ nguyên toàn bộ dữ liệu.** Thư mục dữ liệu là `%APPDATA%\HelixCraft` (cơ sở dữ liệu loài nằm trong `%APPDATA%\HelixCraftData`); gỡ cài đặt không xóa thư mục này.
+
+### macOS
+
+- Yêu cầu: macOS 13 trở lên (universal: Intel và Apple Silicon).
+- Mở `HelixCraft.Setup.<version>.dmg` và kéo **HelixCraft** vào **Applications**.
+- Bản dựng được ký ad-hoc (chưa notarize): lần đầu chạy, nhấp chuột phải vào ứng dụng và chọn **Open** (hoặc cho phép trong System Settings → Privacy & Security). Dữ liệu người dùng nằm trong `~/Library/Application Support/HelixCraft` và không bị xóa khi gỡ cài đặt.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -80,6 +114,7 @@ Chú thích gen và dữ liệu biểu hiện được tiếp nạp qua "plugin 
 
 | Chiều | Định dạng |
 |------|------|
+- **Dự đoán cấu trúc SWISS-MODEL**: với protein chưa có tệp cấu trúc, mô hình hóa trực tuyến từ trình tự axit amin hiện tại; kết quả được lưu cục bộ và liên kết với tệp trình tự cùng gen.
 | Mở / nhập | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), sắc ký đồ (`.ab1`), Excel primer (`.xlsx`), chú thích protein (UniProtKB / GFF3 / InterProScan / GenPept), cấu trúc protein (PDB / mmCIF), gói HelixCraft (gói gen / gói vector `.hcvec` / gói protein `.hcp`) |
 | Lưu / xuất | GenBank, FASTA, SnapGene `.dna`, EMBL, hình bản đồ (SVG / PDF / PNG / JPG / BMP / TIF), ảnh gel có chú thích, Excel primer, chú thích protein 6 định dạng, gói dữ liệu gen / `.hcvec` / `.hcp`, trang web tĩnh chi tiết gen, ZIP sao lưu toàn bộ |
 

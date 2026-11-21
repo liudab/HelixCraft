@@ -7,6 +7,33 @@ Software de escritorio de ingeniería genética asistido por IA · AI-powered ge
 > HelixCraft es un software de escritorio para la investigación en biología molecular e ingeniería genética que cubre el flujo de trabajo completo: buscar el gen → leer la secuencia → diseñar la clonación → ensamblaje in silico → verificación experimental → gestión de datos. Incluye edición de mapas de vectores, análisis de secuencias, diseño de cebadores, simulación de digestiones de restricción y de electroforesis en gel, flujos de trabajo de clonación, análisis de cromatogramas de secuenciación, análisis de proteínas y un asistente de IA opcional. Todos los datos se guardan en tu propio equipo: no hace falta registrarse ni depender de la nube, y la interfaz está disponible en 20 idiomas.
 > Documentación completa: [简体中文](README.md) · [English](README_EN.md)
 
+## Novedades de la v0.5.0
+
+- **Predicción de estructura SWISS-MODEL**: las proteínas sin archivo de estructura pueden modelarse en línea a partir de la secuencia de aminoácidos guardada; el resultado se guarda localmente y se vincula al archivo de secuencia y a su gen. Los trabajos existentes pueden reanudarse por ID de proyecto.
+- **Gestión de proyectos ELN/LIMS**: registro de materiales, mediciones estructuradas, espacios de trabajo por etapa, plantillas, progreso e informes; **BLAST** en línea (con precomprobación Primer-BLAST) y verificación completa de la secuencia con informe de construcción por IA.
+- **Guía y plataformas**: tutoriales guiados tipo curso (capítulos/pausas); compilación universal para macOS 13+ (Intel y Apple Silicon); la interfaz sigue en 20 idiomas.
+
+## Funciones clave
+
+- **Obtención de información génica**: búsqueda en la base local, importación de NCBI Gene/accession, búsqueda mediante plugins de especie (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), IDs y referencias cruzadas, datos de expresión (ePlant / Expression Atlas), anotaciones UniProt y una página de gen con alelos, fenotipos, GO/InterPro y referencias.
+- **Mapas de vectores y edición de secuencias**: mapa circular/lineal enlazado con el texto de secuencia; sitios de restricción, unión de cebadores, ORF y mutaciones superpuestos; anotación inteligente de componentes; exportación SVG/PDF/PNG de calidad publicación.
+- **Diseño de clonación**: lienzo de flujo con 30 nodos para Gibson, Golden Gate, ligación T4, TA/TOPO, Gateway LR/BP y BioBrick; simulación en tiempo real de PCR, digestión y ensamblaje antes del banco.
+- **Diseño de cebadores**: modos general, clonación y qPCR con 50+ parámetros, puntuación Tm/GC/horquilla/dímero, estrategias de unión exón-exón y comprobación de off-target por PCR in silico.
+- **Verificación de secuenciación**: visor de cromatogramas AB1, ensamblaje de lecturas CAP3, verificación completa del vector recombinante (cobertura, uniones, variantes, deriva de referencia) con informe de construcción por IA, alineamiento ClustalW y árboles.
+- **Análisis y simulación de geles**: detección de carriles/bandas por aprendizaje profundo, cuantificación de tamaño y cantidad de ADN a partir de un marcador, electroforesis virtual de digestiones.
+- **Estructura y análisis de proteínas**: visor 3D Mol* para RCSB PDB / AlphaFold DB y archivos PDB/mmCIF locales, vistas topología ↔ secuencia ↔ 3D sincronizadas, estructura secundaria DSSP, medición de distancias y coloración de residuos; **predicción SWISS-MODEL** sin estructura; análisis fisicoquímico, de localización y PTM; paquetes `.hcp`.
+- **Datos de laboratorio y colaboración**: gestión de proyectos ELN/LIMS (materiales, mediciones estructuradas, espacios por etapa, plantillas, informes), bases de vectores/genes/cebadores/secuenciación, transferencia LAN cifrada, copias automáticas; tutoriales guiados; asistente IA opcional; interfaz en 20 idiomas.
+
+## Capturas de pantalla
+
+![Gestión de proyectos y ELN](screenshots/01-projects.png)
+
+![Mapa del vector y editor de secuencia](screenshots/03-vector-editor.png)
+
+![Flujo de clonación](screenshots/06-workflow.png)
+
+![Biblioteca de cebadores](screenshots/05-primers.png)
+
 ## ¿Qué puedes hacer con HelixCraft?
 
 - Abrir un archivo de plásmido y ver de un vistazo la composición de sus elementos y sus sitios de restricción, y exportar figuras del mapa listas para una publicación.
@@ -19,11 +46,12 @@ Software de escritorio de ingeniería genética asistido por IA · AI-powered ge
 
 ## Descarga
 
-La versión más reciente siempre está publicada en el canal [**Releases · latest**](releases/tag/latest):
+La versión más reciente siempre está publicada en el canal [**Releases · latest**](releases):
 
 | Plataforma | Instalador | Cómo instalar |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Doble clic para ejecutar el asistente de instalación |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Abre el `.dmg` y arrastra HelixCraft a Aplicaciones |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Doble clic para entregarlo al instalador gráfico del sistema, o `sudo apt install ./<archivo>` |
 
 El canal `latest` es también la fuente de datos de la función «Comprobar actualizaciones» de la aplicación, y sus archivos se reemplazan por completo en cada versión; las versiones históricas se conservan en la [lista de Releases](releases). Junto a los instaladores, `latest.json` es el manifiesto de actualización que usa la aplicación: enumera el nombre, el tamaño en bytes y el resumen SHA-256 de cada instalador, de modo que puedes verificar que la descarga está completa y no ha sido manipulada.
@@ -35,6 +63,12 @@ El canal `latest` es también la fuente de datos de la función «Comprobar actu
 - Ejecuta `HelixCraft.Setup.<version>.exe` y sigue el asistente (por defecto se instala para todos los usuarios y requiere permisos de administrador).
 - El asistente ofrece un componente opcional de **datos de ejemplo** (vectores de ejemplo, flujos de trabajo de clonación y complementos de especies); los datos de ejemplo solo se importan cuando el contenido correspondiente no existe aún y **nunca sobrescriben los datos que ya hayas creado**.
 - **Instalar sobre una copia existente conserva todos los datos.** El directorio de datos es `%APPDATA%\HelixCraft` (las subbases de datos de especies están en `%APPDATA%\HelixCraftData`); la desinstalación no lo elimina.
+
+### macOS
+
+- Requisitos: macOS 13 o posterior (universal: Intel y Apple Silicon).
+- Abre `HelixCraft.Setup.<version>.dmg` y arrastra **HelixCraft** a **Aplicaciones**.
+- La compilación está firmada ad-hoc (sin notarizar): en el primer inicio, haz clic derecho en la app y elige **Abrir** (o permítela en Ajustes del Sistema → Privacidad y seguridad). Los datos de usuario están en `~/Library/Application Support/HelixCraft` y no se eliminan al desinstalar.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -80,6 +114,7 @@ Las anotaciones de genes y los datos de expresión se incorporan mediante «comp
 
 | Dirección | Formatos |
 |------|------|
+- **Predicción de estructura SWISS-MODEL**: para proteínas sin archivo de estructura, modela en línea la secuencia de aminoácidos actual; el resultado se guarda localmente y se vincula al archivo de secuencia y a su gen.
 | Abrir / importar | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), cromatogramas (`.ab1`), Excel de cebadores (`.xlsx`), anotaciones de proteínas (UniProtKB / GFF3 / InterProScan / GenPept), estructuras de proteínas (PDB / mmCIF), paquetes de HelixCraft (paquete de genes / paquete de vectores `.hcvec` / paquete de proteínas `.hcp`) |
 | Guardar / exportar | GenBank, FASTA, SnapGene `.dna`, EMBL, figuras de mapas (SVG / PDF / PNG / JPG / BMP / TIF), geles anotados, Excel de cebadores, anotaciones de proteínas en 6 formatos, paquete de genes / `.hcvec` / `.hcp`, página web estática de detalles del gen, ZIP de copia de seguridad completa |
 

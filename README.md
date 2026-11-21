@@ -25,6 +25,33 @@ HelixCraft 是一款面向分子生物学与基因工程研究的桌面软件，
 - 从一段蛋白序列出发，分析理化性质、亚细胞定位、修饰位点与三维结构；
 - 按课题管理载体、基因、引物与测序文件，在课题组电脑间传输、定期备份。
 
+## v0.5.0 新功能
+
+- **SWISS-MODEL 结构预测**：没有结构文件的蛋白可按已保存的氨基酸序列在线建模；结果本地落盘并关联该序列文件与所属基因，已有任务可按项目号继续监测。
+- **ELN/LIMS 项目管理**：材料台账、结构化测量、阶段工作区、流程模板、进度与报告；新增 **BLAST** 在线检索（含 Primer-BLAST 预检）与重组载体全链路测序验证、AI 构建报告。
+- **引导与平台**：课程式引导教程（目录/章节/断点续学）；macOS 13+ universal 构建（Intel 与 Apple Silicon）；界面保持 20 种语言。
+
+## 关键功能
+
+- **基因信息获取**：本地基因库检索、NCBI Gene/存取号导入、物种插件检索（RAP-DB / MSU / RiceData、Ensembl Plants、Phytozome）、跨源编号与引用、表达数据（ePlant / Expression Atlas）、UniProt 注释，以及汇总等位变异、表型、GO/InterPro 与文献的基因详情页。
+- **载体图谱与序列编辑**：环形/线性图谱与序列文本双向联动；酶切位点、引物结合、ORF 与突变标记叠加；元件智能注释；发表级 SVG/PDF/PNG 导出。
+- **克隆设计**：30 类节点的工作流画布，支持 Gibson、Golden Gate、T4 连接、TA/TOPO、Gateway LR/BP、BioBrick；上实验台前即可实时模拟 PCR、酶切与组装。
+- **引物设计**：通用/克隆/qPCR 三种模式，50+ 参数，Tm/GC/发夹/二聚体评分，跨外显子策略与 in-silico PCR 脱靶检查。
+- **测序验证**：AB1 峰图查看、CAP3 读段拼接、重组载体全链路验证（覆盖/接合/变异/参考漂移）与 AI 构建报告，ClustalW 比对与系统树。
+- **凝胶分析与模拟**：深度学习泳道/条带识别，基于 marker 的片段大小与 DNA 定量，酶切结果虚拟凝胶电泳。
+- **蛋白结构与分析**：Mol* 三维查看器支持 RCSB PDB / AlphaFold DB 与本地 PDB/mmCIF，拓扑↔序列↔三维联动、DSSP 二级结构、测距与自定义残基着色；无结构文件时可用 **SWISS-MODEL 预测**；理化性质、亚细胞定位与修饰位点分析；`.hcp` 蛋白包。
+- **实验数据与协作**：ELN/LIMS 项目管理（材料、结构化测量、阶段工作区、模板、报告），载体/基因/引物/测序数据库，加密局域网互传与自动备份；课程式引导教程；可选 AI 助手；20 语言界面。
+
+## 界面截图
+
+![项目管理与 ELN](screenshots/01-projects.png)
+
+![载体图谱与序列编辑](screenshots/03-vector-editor.png)
+
+![克隆工作流](screenshots/06-workflow.png)
+
+![引物数据库](screenshots/05-primers.png)
+
 ## 目录
 
 [下载](#下载) · [安装](#安装) · [在线更新](#在线更新) · [功能总览](#功能总览) ·
@@ -33,11 +60,12 @@ HelixCraft 是一款面向分子生物学与基因工程研究的桌面软件，
 
 ## 下载
 
-最新版本始终在 [**Releases · latest 频道**](releases/tag/latest)：
+最新版本始终在 [**Releases · latest 频道**](releases)：
 
 | 平台 | 安装包 | 安装方式 |
 |---|---|---|
 | Windows 10 / 11（x64） | `HelixCraft.Setup.<version>.exe` | 双击运行安装向导 |
+| macOS 13+（universal） | `HelixCraft.Setup.<version>.dmg` | 打开 `.dmg`，将 HelixCraft 拖入「应用程序」 |
 | Debian / Ubuntu（x86_64） | `helixcraft_<version>_amd64.deb` | 双击交给系统图形化安装器，或 `sudo apt install ./<file>` |
 
 `latest` 频道同时是应用内「检查更新」的数据源，资产随每个版本覆盖式替换。历史版本见
@@ -65,6 +93,12 @@ Get-FileHash .\HelixCraft.Setup.<version>.exe -Algorithm SHA256
   上手体验；示例数据只在对应内容不存在时导入，**永远不会覆盖你已建立的数据**。
 - **覆盖安装会保留全部既有数据**。数据目录为 `%APPDATA%\HelixCraft`（物种子库位于
   `%APPDATA%\HelixCraftData`），卸载不会删除该目录。
+
+### macOS
+
+- 系统要求：macOS 13 或更高版本（universal：Intel 与 Apple Silicon）。
+- 打开 `HelixCraft.Setup.<version>.dmg`，将 **HelixCraft** 拖入 **应用程序**。
+- 安装包为 ad-hoc 签名（未公证）：首次启动请右键应用选择 **打开**（或在「系统设置 → 隐私与安全性」中允许）。用户数据位于 `~/Library/Application Support/HelixCraft`，卸载不会删除。
 
 ### Linux（Debian / Ubuntu，x86_64）
 
@@ -186,6 +220,7 @@ FASTA（`.fasta` `.fa`）、SnapGene（`.dna`）、EMBL（`.embl`）→ 序列�
   无序区、低复杂度区、卷曲螺旋、抗原性区段。
 - **在线精算**：对评分最高的候选位点自动提交 InterProScan 结构域扫描与 BLAST 同源检索，把
   Swiss-Prot 已验证注释转移到你的序列上（只补充、不覆盖本地结论，标注来源）。
+- **SWISS-MODEL 结构预测**：没有结构文件的蛋白可按当前氨基酸序列在线建模；结果本地落盘并关联该序列文件与所属基因。
 - **蛋白标注**：导入导出兼容 UniProtKB / GFF3 / InterProScan / GenPept 等格式；蛋白包
   （`.hcp`）把序列、结构、标注、渲染设置打包成一个文件便于分享。
 

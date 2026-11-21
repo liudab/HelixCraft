@@ -7,6 +7,33 @@
 > HelixCraft to aplikacja komputerowa dla badań nad biologią molekularną i inżynierią genetyczną. Obejmuje kompletny przebieg pracy: wyszukanie genu → odczyt sekwencji → zaprojektowanie klonowania → wirtualne (in silico) składanie konstruktów → weryfikacja eksperymentalna → zarządzanie danymi. Oferuje edycję map wektorów, analizę sekwencji, projektowanie starterów, symulację trawienia restrykcyjnego i elektroforezy w żelu, przepływy pracy klonowania, analizę chromatogramów sekwencjonowania, przeglądanie danych gatunkowych, analizę białek oraz opcjonalnego asystenta AI. Wszystkie dane pozostają na twoim komputerze — bez zakładania konta i bez zależności od chmury. Interfejs jest dostępny w 20 językach.
 > Pełna dokumentacja: [简体中文](README.md) · [English](README_EN.md)
 
+## Co nowego w v0.5.0
+
+- **Przewidywanie struktury SWISS-MODEL**: białka bez pliku struktury można modelować online na podstawie zapisanej sekwencji aminokwasów; wynik jest zapisywany lokalnie i powiązany z plikiem sekwencji oraz jego genem. Istniejące zadania można wznowić według ID projektu.
+- **Zarządzanie projektami ELN/LIMS**: rejestr materiałów, ustrukturyzowane pomiary, obszary etapów, szablony, postęp i raporty; **BLAST** online (z kontrolą wstępną Primer-BLAST) i weryfikacja całej sekwencji z raportem budowy AI.
+- **Przewodniki i platformy**: samouczki w stylu kursu (rozdziały/punkty przerwania); kompilacja universal macOS 13+ (Intel i Apple Silicon); interfejs nadal w 20 językach.
+
+## Kluczowe możliwości
+
+- **Pozyskiwanie informacji o genach**: wyszukiwanie w lokalnej bibliotece, import NCBI Gene/accession, wyszukiwanie przez wtyczki gatunków (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), identyfikatory i odnośniki między źródłami, dane ekspresji (ePlant / Expression Atlas), adnotacje UniProt oraz strona genu z allelami, fenotypami, GO/InterPro i literaturą.
+- **Mapy wektorów i edycja sekwencji**: powiązana mapa kołowa/liniowa i tekst sekwencji; miejsca restrykcji, wiązanie starterów, ORF-y i mutacje nakładane; inteligentna adnotacja komponentów; eksport SVG/PDF/PNG jakości publikacyjnej.
+- **Projektowanie klonowania**: kanwa przepływu z 30 węzłami dla Gibson, Golden Gate, ligacji T4, TA/TOPO, Gateway LR/BP i BioBrick; symulacja PCR, trawienia i składania w czasie rzeczywistym przed pracą w laboratorium.
+- **Projektowanie starterów**: tryby ogólny/klonowanie/qPCR z 50+ parametrami, ocena Tm/GC/hairpin/dimer, strategie łączenia eksonów i kontrola off-target przez in-silico PCR.
+- **Weryfikacja sekwencjonowania**: przeglądarka chromatogramów AB1, składanie odczytów CAP3, pełna weryfikacja wektora rekombinowanego (pokrycie, złącza, warianty, dryf referencji) z raportem budowy AI, wyrównanie ClustalW i drzewa.
+- **Analiza i symulacja żelu**: detekcja ścieżek/prążków przez deep learning, ilościowe oznaczanie rozmiaru i ilości DNA na podstawie markera, wirtualna elektroforeza żelowa trawień.
+- **Struktura i analiza białek**: przeglądarka 3D Mol* dla RCSB PDB / AlphaFold DB i lokalnych plików PDB/mmCIF, zsynchronizowane widoki topologia ↔ sekwencja ↔ 3D, struktura drugorzędowa DSSP, pomiar odległości i kolorowanie reszt; **predykcja SWISS-MODEL** bez struktury; analiza fizykochemiczna, lokalizacji i PTM; pakiety białkowe `.hcp`.
+- **Dane laboratoryjne i współpraca**: zarządzanie projektami ELN/LIMS (materiały, ustrukturyzowane pomiary, obszary etapów, szablony, raporty), bazy wektorów/genów/starterów/sekwencjonowania, szyfrowany transfer LAN, automatyczne kopie zapasowe; samouczki; opcjonalny asystent AI; interfejs w 20 językach.
+
+## Zrzuty ekranu
+
+![Zarządzanie projektami i ELN](screenshots/01-projects.png)
+
+![Mapa wektora i edytor sekwencji](screenshots/03-vector-editor.png)
+
+![Przepływ klonowania](screenshots/06-workflow.png)
+
+![Biblioteka starterów](screenshots/05-primers.png)
+
 ## Co możesz z nim robić
 
 - Otworzyć plik plazmidu i od razu zobaczyć jego elementy oraz miejsca restrykcyjne, a następnie wyeksportować mapę jako ilustrację do publikacji;
@@ -19,11 +46,12 @@
 
 ## Pobieranie
 
-Najnowsza wersja jest zawsze dostępna w kanale [**Releases · `latest`**](releases/tag/latest):
+Najnowsza wersja jest zawsze dostępna w kanale [**Releases · `latest`**](releases):
 
 | Platforma | Pakiet instalacyjny | Sposób instalacji |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Dwuklik uruchamia kreatora instalacji |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Otwórz `.dmg` i przeciągnij HelixCraft do Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Dwuklik przekazuje plik graficznemu instalatorowi systemu albo polecenie `sudo apt install ./<plik>` |
 
 Kanał `latest` jest jednocześnie źródłem danych dla funkcji „Sprawdź aktualizacje” w aplikacji, a jego zasoby są zastępowane przy każdym wydaniu. Starsze wersje znajdziesz na [liście wydań](releases) — każde z nich ma osobne archiwum. Leżący w tym samym miejscu plik `latest.json` zawiera nazwę, rozmiar i sumę kontrolną SHA-256 każdego pakietu, co pozwala sprawdzić, czy pobrany plik jest kompletny i niezmodyfikowany.
@@ -35,6 +63,12 @@ Kanał `latest` jest jednocześnie źródłem danych dla funkcji „Sprawdź akt
 - Uruchom `HelixCraft.Setup.<version>.exe` dwuklikiem i przejdź przez kreatora instalacji (domyślnie instalacja dla wszystkich użytkowników, wymagane uprawnienia administratora).
 - Kreator oferuje opcjonalny komponent **danych przykładowych** (przykładowe wektory, przepływy pracy klonowania i wtyczki danych gatunkowych), aby nowi użytkownicy mogli od razu wypróbować program; dane przykładowe są importowane tylko wtedy, gdy dane treści jeszcze nie istnieją — **nigdy nie nadpisują utworzonych przez ciebie danych**.
 - **Instalacja „na istniejącą wersję” zachowuje wszystkie dane.** Katalog danych to `%APPDATA%\HelixCraft` (podbazy danych gatunkowych znajdują się w `%APPDATA%\HelixCraftData`); odinstalowanie programu nie usuwa tego katalogu.
+
+### macOS
+
+- Wymagania: macOS 13 lub nowszy (universal: Intel i Apple Silicon).
+- Otwórz `HelixCraft.Setup.<version>.dmg` i przeciągnij **HelixCraft** do **Applications**.
+- Kompilacja jest podpisana ad-hoc (bez notaryzacji): przy pierwszym uruchomieniu kliknij aplikację prawym przyciskiem i wybierz **Otwórz** (lub zezwól w Ustawieniach systemowych → Prywatność i bezpieczeństwo). Dane użytkownika znajdują się w `~/Library/Application Support/HelixCraft` i nie są usuwane przy odinstalowaniu.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -82,6 +116,7 @@ Adnotacje genów i dane ekspresji są podłączane przez „wtyczki danych gatun
 
 | Kierunek | Formaty |
 |---|---|
+- **Przewidywanie struktury SWISS-MODEL**: dla białek bez pliku struktury modeluj bieżącą sekwencję aminokwasów online; wynik jest zapisywany lokalnie i powiązany z plikiem sekwencji oraz genem.
 | Otwieranie / import | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), chromatogramy (`.ab1`), Excel ze starterami (`.xlsx`), adnotacje białek (UniProtKB / GFF3 / InterProScan / GenPept), struktury białek (PDB / mmCIF), pakiety HelixCraft (pakiet genów / pakiet wektorów `.hcvec` / pakiet białek `.hcp`) |
 | Zapis / eksport | GenBank, FASTA, SnapGene `.dna`, EMBL, obrazy map (SVG / PDF / PNG / JPG / BMP / TIF), opatrzone adnotacjami obrazy żeli, Excel ze starterami, adnotacje białek w 6 formatach, pakiety danych genów / `.hcvec` / `.hcp`, statyczna strona WWW ze szczegółami genu, pełna kopia zapasowa w formacie ZIP |
 

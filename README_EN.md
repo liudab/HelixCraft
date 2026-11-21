@@ -28,6 +28,33 @@ Typical scenarios:
 - Organize vectors, genes, primers and sequencing files per project, transfer them between lab
   computers, and back them up.
 
+## What's new in v0.5.0
+
+- **SWISS-MODEL structure prediction**: proteins without a structure file can be modelled online from the saved amino-acid sequence; the result is saved locally and linked to the sequence file and its gene. Existing jobs can be resumed by project ID.
+- **ELN/LIMS project manager**: material ledger, structured measurements, stage workspaces, templates, progress and reports; **BLAST** online search (with Primer-BLAST pre-check) and full-chain sequencing verification with an AI build report.
+- **Guidance & platforms**: course-style guided tours with chapters and breakpoints; macOS 13+ universal build (Intel and Apple Silicon); the interface remains available in 20 languages.
+
+## Key capabilities
+
+- **Gene information retrieval**: local gene library search, NCBI Gene/accession import, species-plugin lookups (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), cross-source IDs and references, expression data (ePlant / Expression Atlas), UniProt annotations, and a single gene page with alleles, phenotypes, GO/InterPro and references.
+- **Vector maps & sequence editing**: linked circular/linear map and sequence text; restriction sites, primer bindings, ORFs and mutations overlaid; smart component annotation; publication-quality SVG/PDF/PNG export.
+- **Cloning design**: a 30-node workflow canvas for Gibson, Golden Gate, T4 ligation, TA/TOPO, Gateway LR/BP and BioBrick; real-time in-silico PCR, digest and assembly simulation before any bench work.
+- **Primer design**: general, cloning and qPCR modes with 50+ parameters, Tm/GC/hairpin/dimer scoring, exon-junction strategies and in-silico PCR off-target checks.
+- **Sequencing verification**: AB1 chromatogram viewer, CAP3 read assembly, recombinant-vector full-chain verification (coverage, junctions, variants, reference drift) with an AI build report, ClustalW alignment and trees.
+- **Gel analysis & simulation**: deep-learning lane/band detection, fragment-size and DNA-amount quantitation from a marker, and virtual gel electrophoresis of digest results.
+- **Protein structure & analysis**: Mol* 3D viewer for RCSB PDB / AlphaFold DB and local PDB/mmCIF files, synchronized topology ↔ sequence ↔ 3D views, DSSP secondary structure, distance measurement and custom residue coloring; **SWISS-MODEL prediction** when no structure exists; physicochemical, localization and PTM analysis; `.hcp` protein packages.
+- **Lab data & collaboration**: ELN/LIMS project manager (materials, structured measurements, stage workspaces, templates, reports), vector/gene/primer/sequencing databases, encrypted LAN transfer, automatic backups; course-style guided tutorials; optional AI assistant; 20-language interface.
+
+## Screenshots
+
+![Project manager & ELN](screenshots/01-projects.png)
+
+![Vector map & sequence editor](screenshots/03-vector-editor.png)
+
+![Cloning workflow](screenshots/06-workflow.png)
+
+![Primer library](screenshots/05-primers.png)
+
 ## Contents
 
 [Download](#download) · [Installation](#installation) · [Auto-update](#auto-update) ·
@@ -37,11 +64,12 @@ Typical scenarios:
 ## Download
 
 The latest version is always published on the
-[**Releases · `latest` channel**](releases/tag/latest):
+[**Releases · `latest` channel**](releases):
 
 | Platform | Installer | How to install |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Run the installer wizard |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Open the `.dmg` and drag HelixCraft into Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Double-click, or `sudo apt install ./<file>` |
 
 The `latest` channel is also the data source of the in-app "check for updates"; its assets are
@@ -73,6 +101,12 @@ Get-FileHash .\HelixCraft.Setup.<version>.exe -Algorithm SHA256
   corresponding content does not exist yet — **it never overwrites data you have created**.
 - **Installing over an existing copy keeps all your data.** Data lives in `%APPDATA%\HelixCraft`
   (species sub-databases in `%APPDATA%\HelixCraftData`); uninstalling does not remove it.
+
+### macOS
+
+- Requirements: macOS 13 or later (universal: Intel and Apple Silicon).
+- Open `HelixCraft.Setup.<version>.dmg` and drag **HelixCraft** into **Applications**.
+- The build is ad-hoc signed (not notarized): on first launch, right-click the app and choose **Open** (or allow it in System Settings → Privacy & Security). User data lives in `~/Library/Application Support/HelixCraft` and is **not removed on uninstall**.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -228,6 +262,7 @@ folder" action.
 - **Online refinement**: top-scoring candidates are submitted to InterProScan domain scans and
   BLAST homology searches, transferring curated Swiss-Prot annotations onto your sequence
   (additions only, never overwriting local conclusions, with source labels).
+- **SWISS-MODEL structure prediction**: for proteins without a structure file, model the saved amino-acid sequence online; the result is saved locally and linked to the sequence file and its gene.
 - **Protein annotations**: import/export compatible with UniProtKB / GFF3 / InterProScan /
   GenPept and more; a protein package (`.hcp`) bundles sequence, structure, annotations and
   rendering settings into one shareable file.

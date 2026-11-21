@@ -7,6 +7,33 @@
 > HelixCraft adalah perangkat lunak desktop untuk penelitian biologi molekuler dan rekayasa genetika. Aplikasi ini menemani Anda menyelesaikan alur kerja lengkap "mencari gen → membaca sekuens → mendesain kloning → perakitan virtual → verifikasi eksperimen → manajemen data": penyuntingan peta vektor, analisis sekuens, desain primer, simulasi digesti enzim restriksi dan elektroforesis gel, alur kerja kloning, analisis kromatogram sekuensing, pencarian data spesies, analisis protein, serta asisten AI opsional. Seluruh data tersimpan di komputer Anda sendiri, tanpa perlu mendaftarkan akun dan tanpa ketergantungan pada awan. Antarmuka tersedia dalam 20 bahasa.
 > Dokumen lengkap: [简体中文](README.md) · [English](README_EN.md)
 
+## Yang baru di v0.5.0
+
+- **Prediksi struktur SWISS-MODEL**: protein tanpa file struktur dapat dimodelkan online dari urutan asam amino yang tersimpan; hasilnya disimpan lokal dan ditautkan ke file urutan serta gennya. Tugas yang ada dapat dilanjutkan dengan ID proyek.
+- **Manajemen proyek ELN/LIMS**: buku material, pengukuran terstruktur, ruang kerja tahap, templat, kemajuan dan laporan; **BLAST** online (dengan pra-periksa Primer-BLAST) dan verifikasi urutan seluruh rantai dengan laporan pembangunan AI.
+- **Panduan dan platform**: tur terpandu bergaya kursus (bab/titik jeda); build universal macOS 13+ (Intel dan Apple Silicon); antarmuka tetap tersedia dalam 20 bahasa.
+
+## Kemampuan utama
+
+- **Pengambilan informasi gen**: pencarian pustaka gen lokal, impor NCBI Gene/accession, pencarian plugin spesies (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), ID dan referensi lintas sumber, data ekspresi (ePlant / Expression Atlas), anotasi UniProt, dan halaman gen yang merangkum alel, fenotipe, GO/InterPro, dan referensi.
+- **Peta vektor dan penyuntingan urutan**: peta sirkular/linear tertaut dengan teks urutan; situs restriksi, pengikatan primer, ORF, dan mutasi ditumpuk; anotasi komponen cerdas; ekspor SVG/PDF/PNG kualitas publikasi.
+- **Desain kloning**: kanvas alur kerja 30 node untuk Gibson, Golden Gate, ligasi T4, TA/TOPO, Gateway LR/BP, dan BioBrick; simulasi PCR, digest, dan perakitan real-time sebelum bekerja di lab.
+- **Desain primer**: mode umum/kloning/qPCR dengan 50+ parameter, skor Tm/GC/hairpin/dimer, strategi sambungan ekson, dan pemeriksaan off-target in-silico PCR.
+- **Verifikasi sekuensing**: penampil kromatogram AB1, perakitan read CAP3, verifikasi seluruh rantai vektor rekombinan (cakupan, sambungan, varian, pergeseran referensi) dengan laporan pembangunan AI, penyelarasan ClustalW dan pohon.
+- **Analisis dan simulasi gel**: deteksi lajur/pita dengan deep learning, kuantifikasi ukuran fragmen dan jumlah DNA dari marker, elektroforesis gel virtual hasil digest.
+- **Struktur dan analisis protein**: penampil 3D Mol* untuk RCSB PDB / AlphaFold DB dan file PDB/mmCIF lokal, tampilan topologi ↔ urutan ↔ 3D tersinkron, struktur sekunder DSSP, pengukuran jarak dan pewarnaan residu; **prediksi SWISS-MODEL** bila belum ada struktur; analisis fisikokimia, lokalisasi, dan PTM; paket protein `.hcp`.
+- **Data laboratorium dan kolaborasi**: manajemen proyek ELN/LIMS (material, pengukuran terstruktur, ruang kerja tahap, templat, laporan), basis data vektor/gen/primer/sekuensing, transfer LAN terenkripsi, cadangan otomatis; tutorial terpandu; asisten AI opsional; antarmuka 20 bahasa.
+
+## Tangkapan layar
+
+![Manajemen proyek dan ELN](screenshots/01-projects.png)
+
+![Peta vektor dan editor urutan](screenshots/03-vector-editor.png)
+
+![Alur kerja kloning](screenshots/06-workflow.png)
+
+![Pustaka primer](screenshots/05-primers.png)
+
 ## Apa yang bisa Anda lakukan dengan HelixCraft?
 
 - Membuka file plasmid untuk melihat susunan elemen dan situs restriksi secara jelas, lalu mengekspor gambar peta berkualiasi publikasi ilmiah.
@@ -19,11 +46,12 @@
 
 ## Unduh
 
-Versi terbaru selalu dirilis di saluran [**Releases · latest**](releases/tag/latest):
+Versi terbaru selalu dirilis di saluran [**Releases · latest**](releases):
 
 | Platform | Paket instalasi | Cara pemasangan |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Klik ganda untuk menjalankan wizard pemasangan |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Buka `.dmg` dan seret HelixCraft ke Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Klik ganda untuk menyerahkannya ke penginstal grafis sistem, atau `sudo apt install ./<file>` |
 
 Saluran `latest` sekaligus menjadi sumber data fungsi "periksa pembaruan" di dalam aplikasi; aset saluran ini diganti sepenuhnya pada setiap rilis. Versi-versi lama dapat dilihat di [daftar Releases](releases), setiap versi memiliki arsip tersendiri. Di direktori yang sama, `latest.json` adalah manifes pembaruan yang digunakan aplikasi, memuat nama file, jumlah byte, dan ringkasan SHA-256 setiap paket instalasi, sehingga dapat dipakai untuk memverifikasi bahwa unduhan lengkap dan tidak dimanipulasi.
@@ -35,6 +63,12 @@ Saluran `latest` sekaligus menjadi sumber data fungsi "periksa pembaruan" di dal
 - Jalankan `HelixCraft.Setup.<version>.exe` dan ikuti wizard pemasangan (secara bawaan memasang untuk semua pengguna, memerlukan hak administrator).
 - Wizard menyediakan komponen opsional **data contoh** (vektor contoh, alur kerja kloning, dan plugin data spesies) agar pengguna baru dapat langsung mencoba; data contoh hanya diimpor bila konten terkait belum ada dan **tidak akan pernah menimpa data yang telah Anda buat**.
 - **Memasang ulang di atas versi lama tetap mempertahankan seluruh data.** Direktori data adalah `%APPDATA%\HelixCraft` (sub-basis data spesies berada di `%APPDATA%\HelixCraftData`); proses uninstal tidak menghapusnya.
+
+### macOS
+
+- Persyaratan: macOS 13 atau lebih baru (universal: Intel dan Apple Silicon).
+- Buka `HelixCraft.Setup.<version>.dmg` dan seret **HelixCraft** ke **Applications**.
+- Build ditandatangani ad-hoc (belum dinotarisasi): saat pertama dijalankan, klik kanan aplikasi dan pilih **Open** (atau izinkan di System Settings → Privacy & Security). Data pengguna berada di `~/Library/Application Support/HelixCraft` dan tidak dihapus saat uninstal.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -80,6 +114,7 @@ Anotasi gen dan data ekspresi disediakan melalui "plugin data spesies" yang dapa
 
 | Arah | Format |
 |------|------|
+- **Prediksi struktur SWISS-MODEL**: untuk protein tanpa file struktur, modelkan urutan asam amino saat ini secara online; hasilnya disimpan lokal dan ditautkan ke file urutan serta gennya.
 | Buka / impor | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), kromatogram (`.ab1`), Excel primer (`.xlsx`), anotasi protein (UniProtKB / GFF3 / InterProScan / GenPept), struktur protein (PDB / mmCIF), paket HelixCraft (paket gen / paket vektor `.hcvec` / paket protein `.hcp`) |
 | Simpan / ekspor | GenBank, FASTA, SnapGene `.dna`, EMBL, gambar peta (SVG / PDF / PNG / JPG / BMP / TIF), gambar gel beranotasi, Excel primer, anotasi protein dalam 6 format, paket data gen / `.hcvec` / `.hcp`, halaman web statis detail gen, ZIP cadangan penuh |
 

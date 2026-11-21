@@ -14,6 +14,33 @@
 > interface está disponível em 20 idiomas.
 > Documentação completa: [简体中文](README.md) · [English](README_EN.md)
 
+## Novidades da v0.5.0
+
+- **Previsão de estrutura SWISS-MODEL**: proteínas sem arquivo de estrutura podem ser modeladas online a partir da sequência de aminoácidos salva; o resultado é salvo localmente e vinculado ao arquivo de sequência e ao seu gene. Tarefas existentes podem ser retomadas pelo ID do projeto.
+- **Gestão de projetos ELN/LIMS**: registro de materiais, medições estruturadas, espaços de trabalho por etapa, modelos, progresso e relatórios; **BLAST** online (com pré-verificação Primer-BLAST) e verificação completa da sequência com relatório de construção por IA.
+- **Orientação e plataformas**: tutoriais guiados em estilo de curso (capítulos/pausas); build universal para macOS 13+ (Intel e Apple Silicon); interface mantida em 20 idiomas.
+
+## Principais recursos
+
+- **Obtenção de informações gênicas**: busca na biblioteca local, importação NCBI Gene/accession, busca por plugins de espécie (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), IDs e referências cruzadas, dados de expressão (ePlant / Expression Atlas), anotações UniProt e uma página do gene com alelos, fenótipos, GO/InterPro e referências.
+- **Mapas de vetores e edição de sequências**: mapa circular/linear vinculado ao texto da sequência; sítios de restrição, ligação de primers, ORFs e mutações sobrepostos; anotação inteligente de componentes; exportação SVG/PDF/PNG de qualidade de publicação.
+- **Desenho de clonagem**: canvas de fluxo com 30 nós para Gibson, Golden Gate, ligação T4, TA/TOPO, Gateway LR/BP e BioBrick; simulação em tempo real de PCR, digestão e montagem antes da bancada.
+- **Desenho de primers**: modos geral, clonagem e qPCR com 50+ parâmetros, pontuação Tm/GC/hairpin/dímero, estratégias de junção de éxons e verificação de off-target por PCR in silico.
+- **Verificação de sequenciamento**: visualizador de cromatogramas AB1, montagem de reads CAP3, verificação completa do vetor recombinante (cobertura, junções, variantes, deriva de referência) com relatório de construção por IA, alinhamento ClustalW e árvores.
+- **Análise e simulação de gel**: detecção de pistas/bandas por aprendizado profundo, quantificação de tamanho e quantidade de DNA a partir de um marcador, eletroforese virtual de digestões.
+- **Estrutura e análise de proteínas**: visualizador 3D Mol* para RCSB PDB / AlphaFold DB e arquivos PDB/mmCIF locais, visões topologia ↔ sequência ↔ 3D sincronizadas, estrutura secundária DSSP, medição de distâncias e coloração de resíduos; **previsão SWISS-MODEL** sem estrutura; análise físico-química, de localização e PTM; pacotes `.hcp`.
+- **Dados de laboratório e colaboração**: gestão de projetos ELN/LIMS (materiais, medições estruturadas, espaços por etapa, modelos, relatórios), bases de vetores/genes/primers/sequenciamento, transferência LAN criptografada, backups automáticos; tutoriais guiados; assistente de IA opcional; interface em 20 idiomas.
+
+## Capturas de tela
+
+![Gestão de projetos e ELN](screenshots/01-projects.png)
+
+![Mapa do vetor e editor de sequência](screenshots/03-vector-editor.png)
+
+![Fluxo de clonagem](screenshots/06-workflow.png)
+
+![Biblioteca de primers](screenshots/05-primers.png)
+
 ## O que você pode fazer
 
 - Abriu o arquivo de um plasmídeo? Veja com clareza a composição de elementos e os sítios de restrição e exporte a figura do mapa em qualidade de publicação;
@@ -26,11 +53,12 @@
 
 ## Download
 
-A versão mais recente está sempre no [**canal Releases · latest**](releases/tag/latest):
+A versão mais recente está sempre no [**canal Releases · latest**](releases):
 
 | Plataforma | Instalador | Como instalar |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Duplo clique para executar o assistente de instalação |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Abra o `.dmg` e arraste o HelixCraft para Aplicativos |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Duplo clique para entregar ao instalador gráfico do sistema, ou `sudo apt install ./<arquivo>` |
 
 O canal latest também é a fonte de dados do "verificar atualizações" dentro do aplicativo, com os arquivos substituídos a cada versão. Versões anteriores ficam na [lista de Releases](releases), cada uma com seu próprio arquivamento. O `latest.json` na mesma pasta lista nome, tamanho em bytes e resumo SHA-256 de cada instalador, permitindo conferir se o download está completo e intacto.
@@ -42,6 +70,12 @@ O canal latest também é a fonte de dados do "verificar atualizações" dentro 
 - Dê um duplo clique em `HelixCraft.Setup.<version>.exe` e siga o assistente (requer Windows 10 ou superior, x64; por padrão instala para todos os usuários e pede privilégios de administrador).
 - O assistente oferece um componente opcional de **dados de exemplo** (vetores de exemplo, fluxos de trabalho de clonagem e plugins de espécies) para facilitar o primeiro contato; os exemplos só são importados quando o conteúdo correspondente ainda não existe e **nunca sobrescrevem os dados que você já criou**.
 - **Instalar por cima preserva todos os dados existentes.** O diretório de dados é `%APPDATA%\HelixCraft` (os sub-bancos de dados de espécies ficam em `%APPDATA%\HelixCraftData`) e a desinstalação não o remove.
+
+### macOS
+
+- Requisitos: macOS 13 ou superior (universal: Intel e Apple Silicon).
+- Abra `HelixCraft.Setup.<version>.dmg` e arraste o **HelixCraft** para **Aplicativos**.
+- O build é assinado ad-hoc (não notarizado): no primeiro início, clique com o botão direito no app e escolha **Abrir** (ou permita em Ajustes do Sistema → Privacidade e Segurança). Os dados do usuário ficam em `~/Library/Application Support/HelixCraft` e não são removidos na desinstalação.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -89,6 +123,7 @@ Anotações e dados de expressão chegam por "plugins de espécies", que podem s
 
 | Sentido | Formatos |
 |---|---|
+- **Previsão de estrutura SWISS-MODEL**: para proteínas sem arquivo de estrutura, modele online a sequência de aminoácidos atual; o resultado é salvo localmente e vinculado ao arquivo de sequência e ao gene.
 | Abrir / importar | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), cromatogramas (`.ab1`), Excel de primers (`.xlsx`), anotações proteicas (UniProtKB / GFF3 / InterProScan / GenPept), estruturas proteicas (PDB / mmCIF) e pacotes HelixCraft (pacote de genes / vetores `.hcvec` / proteínas `.hcp`) |
 | Salvar / exportar | GenBank, FASTA, SnapGene `.dna`, EMBL, figuras de mapas (SVG / PDF / PNG / JPG / BMP / TIF), figuras de gel anotadas, Excel de primers, anotações proteicas em 6 formatos, pacotes de genes / `.hcvec` / `.hcp`, página web estática do gene e backup completo em ZIP |
 

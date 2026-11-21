@@ -5,7 +5,35 @@
 [简体中文](README.md) · [English](README_EN.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · **Français** · [Deutsch](README_de.md) · [Español](README_es.md) · [Português](README_pt.md) · [Русский](README_ru.md) · [Italiano](README_it.md) · [العربية](README_ar.md) · [हिन्दी](README_hi.md) · [ไทย](README_th.md) · [Tiếng Việt](README_vi.md) · [Bahasa Indonesia](README_id.md) · [Türkçe](README_tr.md) · [Nederlands](README_nl.md) · [Polski](README_pl.md) · [Svenska](README_sv.md) · [Čeština](README_cs.md)
 
 > HelixCraft est un logiciel de bureau destiné à la recherche en biologie moléculaire et en ingénierie génétique. Il couvre l'ensemble du flux de travail « trouver un gène → lire les séquences → concevoir le clonage → assembler in silico → valider expérimentalement → gérer les données » : édition de cartes de vecteurs, analyse de séquences, conception d'amorces, simulation de digestions de restriction et d'électrophorèse sur gel, workflows de clonage, analyse de chromatogrammes de séquençage, analyse de protéines et assistant IA optionnel. Toutes les données sont stockées sur votre propre ordinateur, sans compte à créer ni dépendance à un service cloud. L'interface est disponible en 20 langues.
+- **Prédiction de structure SWISS-MODEL** : pour les protéines sans fichier de structure, modélisez en ligne la séquence d'acides aminés enregistrée ; le résultat est stocké localement et lié au fichier de séquence et à son gène.
 > Documentation complète : [简体中文](README.md) · [English](README_EN.md)
+
+## Nouveautés de la v0.5.0
+
+- **Prédiction de structure SWISS-MODEL** : les protéines sans fichier de structure peuvent être modélisées en ligne à partir de la séquence d'acides aminés enregistrée ; le résultat est stocké localement et lié au fichier de séquence et à son gène. Les tâches existantes peuvent être reprises par ID de projet.
+- **Gestion de projet ELN/LIMS** : registre des matériaux, mesures structurées, espaces de travail par étape, modèles, progression et rapports ; **BLAST** en ligne (avec pré-contrôle Primer-BLAST) et vérification complète des séquences avec rapport de construction par IA.
+- **Guidage et plateformes** : tutoriels guidés de type cours (chapitres, reprise) ; build universal macOS 13+ (Intel et Apple Silicon) ; interface toujours en 20 langues.
+
+## Fonctions clés
+
+- **Récupération d'informations sur les gènes** : recherche dans la base locale, import NCBI Gene/accession, recherche via plugins d'espèces (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), identifiants et références croisés, données d'expression (ePlant / Expression Atlas), annotations UniProt, et une page de gène réunissant allèles, phénotypes, GO/InterPro et références.
+- **Cartes de vecteurs et édition de séquences** : carte circulaire/linéaire liée au texte de séquence ; sites de restriction, amorces, ORF et mutations superposés ; annotation intelligente des composants ; export SVG/PDF/PNG de qualité publication.
+- **Conception de clonage** : canvas de workflow à 30 nœuds pour Gibson, Golden Gate, ligature T4, TA/TOPO, Gateway LR/BP et BioBrick ; simulation PCR, digestion et assemblage en temps réel avant le bench.
+- **Conception d'amorces** : modes général, clonage et qPCR avec 50+ paramètres, scores Tm/GC/épingle/dimère, stratégies de jonction d'exons et contrôle hors cible par in-silico PCR.
+- **Vérification de séquençage** : visualiseur de chromatogrammes AB1, assemblage de reads CAP3, vérification complète du vecteur recombinant (couverture, jonctions, variants, dérive de référence) avec rapport de construction par IA, alignement ClustalW et arbres.
+- **Analyse et simulation de gel** : détection de pistes/bandes par apprentissage profond, quantification de taille et de quantité d'ADN à partir d'un marqueur, électrophorèse virtuelle des digestions.
+- **Structure et analyse des protéines** : visualiseur 3D Mol* pour RCSB PDB / AlphaFold DB et fichiers PDB/mmCIF locaux, vues topologie ↔ séquence ↔ 3D synchronisées, structure secondaire DSSP, mesure de distances et coloration des résidus ; **prédiction SWISS-MODEL** en l'absence de structure ; analyse physico-chimique, localisation et PTM ; packages protéiques `.hcp`.
+- **Données de laboratoire et collaboration** : gestion de projet ELN/LIMS (matériaux, mesures structurées, espaces par étape, modèles, rapports), bases vecteurs/gènes/amorces/séquençage, transfert LAN chiffré, sauvegardes automatiques ; tutoriels guidés ; assistant IA optionnel ; interface en 20 langues.
+
+## Captures d'écran
+
+![Gestion de projet et ELN](screenshots/01-projects.png)
+
+![Carte de vecteur et éditeur de séquence](screenshots/03-vector-editor.png)
+
+![Flux de clonage](screenshots/06-workflow.png)
+
+![Bibliothèque d'amorces](screenshots/05-primers.png)
 
 ## Ce que vous pouvez en faire
 
@@ -23,11 +51,12 @@
 
 ## Téléchargement
 
-La dernière version est toujours publiée sur le [**canal Releases · `latest`**](releases/tag/latest) :
+La dernière version est toujours publiée sur le [**canal Releases · `latest`**](releases) :
 
 | Plateforme | Installateur | Mode d'installation |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Double-cliquez pour lancer l'assistant d'installation |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Ouvrez le `.dmg` et glissez HelixCraft dans Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Double-cliquez pour le confier au programme d'installation graphique du système, ou `sudo apt install ./<fichier>` |
 
 Le canal `latest` sert également de source de données à la fonction « Vérifier les mises à jour » intégrée à l'application, et ses fichiers sont remplacés à chaque version. Les versions historiques sont archivées dans la [liste des Releases](releases). Le fichier `latest.json` du même dossier est le manifeste de mise à jour utilisé par l'application : il indique pour chaque installateur le nom de fichier, la taille en octets et l'empreinte SHA-256, ce qui permet de vérifier que le téléchargement est complet et n'a pas été altéré.
@@ -40,6 +69,12 @@ Le canal `latest` sert également de source de données à la fonction « Vérif
 - Exécutez `HelixCraft.Setup.<version>.exe` et suivez l'assistant d'installation.
 - L'assistant propose un composant optionnel de **données d'exemple** (vecteurs d'exemple, workflows de clonage et extensions d'espèces) pour permettre aux nouveaux utilisateurs de démarrer rapidement ; ces données ne sont importées que si le contenu correspondant n'existe pas encore et **ne remplaceront jamais les données que vous avez créées**.
 - **Une installation par-dessus la version existante conserve toutes vos données.** Celles-ci résident dans `%APPDATA%\HelixCraft` (sous-bases d'espèces dans `%APPDATA%\HelixCraftData`) ; la désinstallation ne les supprime pas.
+
+### macOS
+
+- Configuration requise : macOS 13 ou ultérieur (universal : Intel et Apple Silicon).
+- Ouvrez `HelixCraft.Setup.<version>.dmg` et glissez **HelixCraft** dans **Applications**.
+- Le build est signé ad-hoc (non notarié) : au premier lancement, cliquez droit sur l'application et choisissez **Ouvrir** (ou autorisez-la dans Réglages Système → Confidentialité et sécurité). Les données utilisateur se trouvent dans `~/Library/Application Support/HelixCraft` et ne sont **pas supprimées à la désinstallation**.
 
 ### Linux (Debian / Ubuntu, x86_64)
 

@@ -7,6 +7,33 @@
 > HelixCraft, moleküler biyoloji ve gen mühendisliği araştırmaları için geliştirilmiş bir masaüstü yazılımıdır. *Gen arama → sekans okuma → klonlama tasarımı → sanal birleştirme → deneysel doğrulama → veri yönetimi* biçimindeki iş akışının tamamını tek çatı altında toplar: vektör haritası düzenleme, sekans analizi, primer tasarımı, restriksiyon kesimi ve jel elektroforezi simülasyonu, klonlama iş akışları, Sanger kromatogram analizi, tür verisi sorgulama, protein analizi ve isteğe bağlı bir yapay zekâ asistanı. Tüm veriler kendi bilgisayarınızda saklanır; hesap kaydı gerekmez, bulut bağımlılığı yoktur. Arayüz 20 dilde kullanılabilir.
 > Tam belgeler: [简体中文](README.md) · [English](README_EN.md)
 
+## v0.5.0'de yenilikler
+
+- **SWISS-MODEL yapı tahmini**: yapı dosyası olmayan proteinler, kaydedilmiş amino asit dizisinden çevrimiçi modellenebilir; sonuç yerel olarak saklanır ve dizi dosyası ile genine bağlanır. Mevcut işler proje kimliğiyle izlenmeye devam edebilir.
+- **ELN/LIMS proje yönetimi**: materyal defteri, yapılandırılmış ölçümler, aşama çalışma alanları, şablonlar, ilerleme ve raporlar; **BLAST** çevrimiçi arama (Primer-BLAST ön kontrolü ile) ve AI yapı raporlu tam zincir dizi doğrulaması.
+- **Rehberlik ve platformlar**: bölüm/duraklamalı kurs tarzı rehber turlar; macOS 13+ universal derleme (Intel ve Apple Silicon); arayüz 20 dilde.
+
+## Temel yetenekler
+
+- **Gen bilgisi edinme**: yerel gen kütüphanesinde arama, NCBI Gene/accession içe aktarma, tür eklentisi aramaları (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), kaynaklar arası ID ve referanslar, ifade verileri (ePlant / Expression Atlas), UniProt açıklamaları ve aleller, fenotipler, GO/InterPro ve kaynakları bir araya getiren gen ayrıntı sayfası.
+- **Vektör haritaları ve dizi düzenleme**: dairesel/doğrusal harita ile dizi metni çift yönlü bağlı; restriksiyon bölgeleri, primer bağlanmaları, ORF'ler ve mutasyonlar üst üste; akıllı bileşen açıklaması; yayın kalitesinde SVG/PDF/PNG dışa aktarma.
+- **Klonlama tasarımı**: Gibson, Golden Gate, T4 ligasyonu, TA/TOPO, Gateway LR/BP ve BioBrick için 30 düğümlü iş akışı tuvali; tezgah çalışmasından önce gerçek zamanlı PCR, kesim ve birleştirme simülasyonu.
+- **Primer tasarımı**: genel/klonlama/qPCR modları, 50+ parametre, Tm/GC/hairpin/dimer puanlaması, ekson bağlantı stratejileri ve in-silico PCR hedef dışı kontrolü.
+- **Dizileme doğrulaması**: AB1 kromatogram görüntüleyici, CAP3 read birleştirme, rekombinant vektörün tam zincir doğrulaması (kapsam, bağlantılar, varyantlar, referans kayması) ve AI yapı raporu, ClustalW hizalama ve ağaçlar.
+- **Jel analizi ve simülasyonu**: derin öğrenme ile kuyu/bant algılama, marker'dan fragman boyutu ve DNA miktarı ölçümü, kesim sonuçlarının sanal jel elektroforezi.
+- **Protein yapısı ve analizi**: RCSB PDB / AlphaFold DB ve yerel PDB/mmCIF dosyaları için Mol* 3D görüntüleyici, topoloji ↔ dizi ↔ 3D senkron görünümler, DSSP ikincil yapı, mesafe ölçümü ve özel kalıntı renklendirme; yapı yoksa **SWISS-MODEL tahmini**; fizikokimyasal, lokalizasyon ve PTM analizi; `.hcp` protein paketleri.
+- **Laboratuvar verileri ve işbirliği**: ELN/LIMS proje yönetimi (materyaller, yapılandırılmış ölçümler, aşama çalışma alanları, şablonlar, raporlar), vektör/gen/primer/dizileme veritabanları, şifreli LAN aktarımı, otomatik yedekleme; kurs tarzı eğitimler; isteğe bağlı AI asistanı; 20 dil arayüzü.
+
+## Ekran görüntüleri
+
+![Proje yönetimi ve ELN](screenshots/01-projects.png)
+
+![Vektör haritası ve dizi düzenleyici](screenshots/03-vector-editor.png)
+
+![Klonlama iş akışı](screenshots/06-workflow.png)
+
+![Primer kütüphanesi](screenshots/05-primers.png)
+
 ## Neler yapabilirsiniz?
 
 - Plazmit haritası dosyasını açıp bileşenleri ve restriksiyon sitelerini tek bakışta görebilir, tez ve makaleler için yayın kalitesinde harita görselleri dışa aktarabilirsiniz.
@@ -19,11 +46,12 @@
 
 ## İndirme
 
-En güncel sürüm her zaman [**Releases · latest kanalı**](releases/tag/latest) altında yayımlanır:
+En güncel sürüm her zaman [**Releases · latest kanalı**](releases) altında yayımlanır:
 
 | Platform | Kurulum paketi | Kurulum yöntemi |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Çift tıklayarak kurulum sihirbazını çalıştırın |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | `.dmg` dosyasını açın ve HelixCraft'ı Applications'a sürükleyin |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Çift tıklayıp sistem grafik yükleyicisine bırakın ya da `sudo apt install ./<dosya>` komutunu çalıştırın |
 
 `latest` kanalı aynı zamanda uygulama içi "güncellemeleri denetle" işlevinin veri kaynağıdır; paketler her sürümde yenisiyle değiştirilir. Eski sürümler [Releases listesi](releases) altında, sürüm başına ayrı arşivler halinde bulunur. Aynı dizindeki `latest.json` uygulamanın kullandığı güncelleme manifestosudur; her kurulum paketinin dosya adını, bayt sayısını ve SHA-256 özetini listeler, böylece indirmenin eksiksiz ve değiştirilmemiş olduğunu doğrulayabilirsiniz.
@@ -35,6 +63,12 @@ En güncel sürüm her zaman [**Releases · latest kanalı**](releases/tag/lates
 - `HelixCraft.Setup.<version>.exe` dosyasını çift tıklatıp sihirbazın adımlarını izleyin (varsayılan olarak tüm kullanıcılar için kurulur, yönetici izni gerekir).
 - Sihirbaz, yeni kullanıcıların hemen deneyebilmesi için isteğe bağlı bir **örnek veri** bileşeni sunar (örnek vektörler, klonlama iş akışları ve tür verisi eklentileri). Örnek veri yalnızca ilgili içerik henüz yoksa içe aktarılır; **halihazırda oluşturduğunuz verilerin üzerine asla yazmaz**.
 - **Var olan kurulumun üzerine yükleme tüm verileri korur.** Veri dizini `%APPDATA%\HelixCraft` (tür alt veritabanları `%APPDATA%\HelixCraftData` içinde) şeklindedir; programı kaldırmak bu dizinleri silmez.
+
+### macOS
+
+- Gereksinimler: macOS 13 veya üzeri (universal: Intel ve Apple Silicon).
+- `HelixCraft.Setup.<version>.dmg` dosyasını açın ve **HelixCraft**'ı **Applications** klasörüne sürükleyin.
+- Derleme ad-hoc imzalıdır (notarize değil): ilk çalıştırmada uygulamaya sağ tıklayıp **Open** seçin (veya System Settings → Privacy & Security'de izin verin). Kullanıcı verileri `~/Library/Application Support/HelixCraft` altında olup kaldırma sırasında silinmez.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -82,6 +116,7 @@ Gen açıklamaları (anotasyon) ve ekspresyon verileri "tür verisi eklentileri"
 
 | Yön | Biçimler |
 |------|------|
+- **SWISS-MODEL yapı tahmini**: yapı dosyası olmayan proteinler için mevcut amino asit dizisinden çevrimiçi modelleme yapın; sonuç yerel olarak saklanır ve dizi dosyası ile genine bağlanır.
 | Açma / içe aktarma | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), sekanslama kromatogramları (`.ab1`), primer Excel (`.xlsx`), protein açıklamaları (UniProtKB / GFF3 / InterProScan / GenPept), protein yapıları (PDB / mmCIF), HelixCraft paketleri (gen paketi / `.hcvec` vektör paketi / `.hcp` protein paketi) |
 | Kaydetme / dışa aktarma | GenBank, FASTA, SnapGene `.dna`, EMBL, harita görselleri (SVG / PDF / PNG / JPG / BMP / TIF), açıklamalı jel görselleri, primer Excel, altı biçimde protein açıklaması, gen veri paketi / `.hcvec` / `.hcp`, gen ayrıntısı statik web sayfası, tam yedek ZIP |
 

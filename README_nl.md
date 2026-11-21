@@ -8,6 +8,33 @@
 >
 > Volledige documentatie: [简体中文](README.md) · [English](README_EN.md)
 
+## Nieuw in v0.5.0
+
+- **SWISS-MODEL-structuurvoorspelling**: eiwitten zonder structuurbestand kunnen online worden gemodelleerd op basis van de opgeslagen aminozuursequentie; het resultaat wordt lokaal opgeslagen en gekoppeld aan het sequentiebestand en het bijbehorende gen. Bestaande taken kunnen met een project-ID worden hervat.
+- **ELN/LIMS-projectbeheer**: materiaalregister, gestructureerde metingen, fasewerkruimtes, sjablonen, voortgang en rapporten; **BLAST** online zoeken (met Primer-BLAST-voorcontrole) en volledige sequentieverificatie met AI-bouwrapport.
+- **Begeleiding en platforms**: cursusachtige rondleidingen (hoofdstukken/pauzes); macOS 13+ universal build (Intel en Apple Silicon); interface blijft in 20 talen.
+
+## Kernfuncties
+
+- **Geninformatie ophalen**: zoeken in de lokale genbibliotheek, NCBI Gene/accession importeren, soortspecifieke plug-ins (RAP-DB / MSU / RiceData, Ensembl Plants, Phytozome), kruisverwijzingen, expressiedata (ePlant / Expression Atlas), UniProt-annotaties en één genpagina met allelen, fenotypes, GO/InterPro en referenties.
+- **Vectorkaarten en sequentiebewerking**: gekoppelde cirkelvormige/lijnvormige kaart en sequentietekst; restrictieplaatsen, primerbindingen, ORF's en mutaties als overlay; slimme componentannotatie; publicatieklare SVG/PDF/PNG-export.
+- **Kloneringsontwerp**: workflow-canvas met 30 knooppunten voor Gibson, Golden Gate, T4-ligatie, TA/TOPO, Gateway LR/BP en BioBrick; realtime simulatie van PCR, digestie en assemblage vóór het labwerk.
+- **Primerontwerp**: algemene, klonerings- en qPCR-modus met 50+ parameters, Tm/GC/hairpin/dimeer-scores, exon-junctiestrategieën en in-silico PCR off-target-controle.
+- **Sequencing-verificatie**: AB1-chromatogramviewer, CAP3-readassemblage, volledige ketenverificatie van recombinante vectoren (dekking, juncties, varianten, referentiedrift) met AI-bouwrapport, ClustalW-uitlijning en bomen.
+- **Gelanalyse en -simulatie**: deep-learning-detectie van lanes/banden, fragmentgrootte- en DNA-hoevveelheidsquantificatie met een marker, virtuele gelelektroforese van digestieresultaten.
+- **Eiwitstructuur en -analyse**: Mol* 3D-viewer voor RCSB PDB / AlphaFold DB en lokale PDB/mmCIF-bestanden, gesynchroniseerde topologie ↔ sequentie ↔ 3D-weergaven, DSSP-secundaire structuur, afstandsmeting en aangepaste residukleuring; **SWISS-MODEL-voorspelling** zonder structuur; fysisch-chemische, lokalisatie- en PTM-analyse; `.hcp`-eiwitpakketten.
+- **Labgegevens en samenwerking**: ELN/LIMS-projectbeheer (materialen, gestructureerde metingen, fasewerkruimtes, sjablonen, rapporten), vector-/gen-/primer-/sequencing-databases, versleutelde LAN-overdracht, automatische back-ups; cursusachtige tutorials; optionele AI-assistent; interface in 20 talen.
+
+## Schermafbeeldingen
+
+![Projectbeheer en ELN](screenshots/01-projects.png)
+
+![Vectorkaart en sequentie-editor](screenshots/03-vector-editor.png)
+
+![Kloneringsworkflow](screenshots/06-workflow.png)
+
+![Primerbibliotheek](screenshots/05-primers.png)
+
 ## Wat kun je ermee doen
 
 - Open een plasmidebestand en zie de elementen en restrictielocaties overzichtelijk voor je, en exporteer daarna een kaartfiguur van publicatiekwaliteit;
@@ -20,11 +47,12 @@
 
 ## Downloaden
 
-De nieuwste versie is altijd te vinden in het [**Releases · latest-kanaal**](releases/tag/latest):
+De nieuwste versie is altijd te vinden in het [**Releases · latest-kanaal**](releases):
 
 | Platform | Installatieprogramma | Installatiemethode |
 |---|---|---|
 | Windows 10 / 11 (x64) | `HelixCraft.Setup.<version>.exe` | Dubbelklikken en de installatiewizard volgen |
+| macOS 13+ (universal) | `HelixCraft.Setup.<version>.dmg` | Open het `.dmg` en sleep HelixCraft naar Applications |
 | Debian / Ubuntu (x86_64) | `helixcraft_<version>_amd64.deb` | Dubbelklikken (grafische installatie van het systeem) of `sudo apt install ./<file>` |
 
 Het `latest`-kanaal is tegelijk de gegevensbron van de optie “Controleren op updates” in de app; de bijbehorende bestanden worden bij elke release compleet vervangen. Oudere versies vind je in de [Releases-lijst](releases), waar elke versie een eigen archief heeft. Het `latest.json` in dezelfde release is het updatemanifest dat de app gebruikt en bevat per installatieprogramma de bestandsnaam, de grootte en de SHA-256-controlesom, waarmee je de download kunt verifiëren.
@@ -36,6 +64,12 @@ Het `latest`-kanaal is tegelijk de gegevensbron van de optie “Controleren op u
 - Systeemvereiste: Windows 10 of nieuwer (x64). Voer `HelixCraft.Setup.<version>.exe` uit en volg de wizard (standaard voor alle gebruikers geïnstalleerd; administratorrechten vereist).
 - De wizard biedt een optioneel onderdeel met **voorbeeldgegevens** aan (voorbeeldvectoren, kloneringsworkflows en soortgegevens-plugins), zodat nieuwe gebruikers direct kunnen starten. Voorbeeldgegevens worden alleen geïmporteerd als de betreffende inhoud nog niet bestaat en **overschrijven nooit gegevens die je zelf hebt aangemaakt**.
 - **Een installatie over een bestaande versie behoudt al je gegevens.** De gegevensmap is `%APPDATA%\HelixCraft` (de subdatabases met soortgegevens staan in `%APPDATA%\HelixCraftData`); bij het verwijderen van het programma blijft deze map behouden.
+
+### macOS
+
+- Vereisten: macOS 13 of later (universal: Intel en Apple Silicon).
+- Open `HelixCraft.Setup.<version>.dmg` en sleep **HelixCraft** naar **Applications**.
+- De build is ad-hoc ondertekend (niet genotariseerd): klik bij de eerste start met de rechtermuisknop op de app en kies **Open** (of sta het toe in Systeeminstellingen → Privacy en beveiliging). Gebruikersgegevens staan in `~/Library/Application Support/HelixCraft` en worden niet verwijderd bij deinstallatie.
 
 ### Linux (Debian / Ubuntu, x86_64)
 
@@ -83,6 +117,7 @@ Online opgevraagde annotaties, sequenties en afbeeldingen worden automatisch lok
 
 | Richting | Indelingen |
 |------|------|
+- **SWISS-MODEL-structuurvoorspelling**: modelleer voor eiwitten zonder structuurbestand de huidige aminozuursequentie online; het resultaat wordt lokaal opgeslagen en gekoppeld aan het sequentiebestand en het gen.
 | Openen / importeren | GenBank (`.gb` `.gbk`), FASTA (`.fasta` `.fa` `.faa`), SnapGene (`.dna`), EMBL (`.embl`), chromatogrammen (`.ab1`), primer-Excel (`.xlsx`), eiwitannotaties (UniProtKB / GFF3 / InterProScan / GenPept), eiwitstructuren (PDB / mmCIF), HelixCraft-pakketten (genpakket / `.hcvec`-vectorpakket / `.hcp`-eiwitpakket) |
 | Opslaan / exporteren | GenBank, FASTA, SnapGene `.dna`, EMBL, kaartfiguren (SVG / PDF / PNG / JPG / BMP / TIF), geannoteerde gelfiguren, primer-Excel, eiwitannotaties in 6 indelingen, gendatapakket / `.hcvec` / `.hcp`, statische webpagina met gendetails, volledige back-up als ZIP |
 
