@@ -26,13 +26,25 @@
 
 ## स्क्रीनशॉट
 
-![प्रोजेक्ट प्रबंधन और ELN](screenshots/01-projects.png)
+![जीन जानकारी और क्रॉस-सोर्स एनोटेशन](screenshots/gene-detail.png)
+
+![वेक्टर लाइब्रेरी](screenshots/02-vectors.png)
 
 ![वेक्टर मैप और अनुक्रम संपादक](screenshots/03-vector-editor.png)
 
 ![क्लोनिंग वर्कफ़्लो](screenshots/06-workflow.png)
 
 ![प्राइमर लाइब्रेरी](screenshots/05-primers.png)
+
+![प्रतिबंध एंजाइम लाइब्रेरी](screenshots/08-enzymes.png)
+
+![प्रोटीन संरचना लाइब्रेरी](screenshots/protein-library.png)
+
+![प्रोटीन 3D संरचना व्यूअर](screenshots/protein-structure.png)
+
+![SWISS-MODEL संरचना पूर्वानुमान](screenshots/swissmodel-dialog.png)
+
+![प्रोजेक्ट प्रबंधन और ELN](screenshots/01-projects.png)
 
 ## आप इससे क्या कर सकते हैं
 

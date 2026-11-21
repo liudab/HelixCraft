@@ -47,13 +47,25 @@ Typical scenarios:
 
 ## Screenshots
 
-![Project manager & ELN](screenshots/01-projects.png)
+![Gene information & cross-source annotations](screenshots/gene-detail.png)
+
+![Vector database](screenshots/02-vectors.png)
 
 ![Vector map & sequence editor](screenshots/03-vector-editor.png)
 
 ![Cloning workflow](screenshots/06-workflow.png)
 
 ![Primer library](screenshots/05-primers.png)
+
+![Restriction enzyme library](screenshots/08-enzymes.png)
+
+![Protein structure library](screenshots/protein-library.png)
+
+![Protein 3D structure viewer](screenshots/protein-structure.png)
+
+![SWISS-MODEL structure prediction](screenshots/swissmodel-dialog.png)
+
+![Project manager & ELN](screenshots/01-projects.png)
 
 ## Contents
 

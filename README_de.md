@@ -26,13 +26,25 @@
 
 ## Screenshots
 
-![Projektverwaltung & ELN](screenshots/01-projects.png)
+![Geninformationen und quellenübergreifende Annotationen](screenshots/gene-detail.png)
 
-![Vektorkarte & Sequenzeditor](screenshots/03-vector-editor.png)
+![Vektorbibliothek](screenshots/02-vectors.png)
+
+![Vektorkarte und Sequenzeditor](screenshots/03-vector-editor.png)
 
 ![Klonierungs-Workflow](screenshots/06-workflow.png)
 
 ![Primer-Bibliothek](screenshots/05-primers.png)
+
+![Restriktionsenzym-Bibliothek](screenshots/08-enzymes.png)
+
+![Proteinstruktur-Bibliothek](screenshots/protein-library.png)
+
+![3D-Proteinstruktur-Viewer](screenshots/protein-structure.png)
+
+![SWISS-MODEL-Strukturvorhersage](screenshots/swissmodel-dialog.png)
+
+![Projektverwaltung und ELN](screenshots/01-projects.png)
 
 ## Was Sie damit machen können
 

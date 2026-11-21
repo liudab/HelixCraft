@@ -26,13 +26,25 @@ Phần mềm desktop hỗ trợ kỹ thuật di truyền nhờ AI · AI-powered 
 
 ## Ảnh chụp màn hình
 
-![Quản lý dự án và ELN](screenshots/01-projects.png)
+![Thông tin gen và chú thích chéo nguồn](screenshots/gene-detail.png)
+
+![Thư viện vector](screenshots/02-vectors.png)
 
 ![Bản đồ vector và trình soạn thảo trình tự](screenshots/03-vector-editor.png)
 
 ![Quy trình nhân dòng](screenshots/06-workflow.png)
 
 ![Thư viện primer](screenshots/05-primers.png)
+
+![Thư viện enzyme cắt giới hạn](screenshots/08-enzymes.png)
+
+![Thư viện cấu trúc protein](screenshots/protein-library.png)
+
+![Trình xem cấu trúc protein 3D](screenshots/protein-structure.png)
+
+![Dự đoán cấu trúc SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![Quản lý dự án và ELN](screenshots/01-projects.png)
 
 ## Bạn có thể làm gì với HelixCraft?
 

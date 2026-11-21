@@ -26,13 +26,25 @@
 
 ## スクリーンショット
 
-![プロジェクト管理と ELN](screenshots/01-projects.png)
+![遺伝子情報と横断アノテーション](screenshots/gene-detail.png)
+
+![ベクターライブラリ](screenshots/02-vectors.png)
 
 ![ベクター地図と配列エディター](screenshots/03-vector-editor.png)
 
 ![クローニングワークフロー](screenshots/06-workflow.png)
 
 ![プライマーライブラリ](screenshots/05-primers.png)
+
+![制限酵素ライブラリ](screenshots/08-enzymes.png)
+
+![タンパク質構造ライブラリ](screenshots/protein-library.png)
+
+![タンパク質 3D 構造ビューア](screenshots/protein-structure.png)
+
+![SWISS-MODEL 構造予測](screenshots/swissmodel-dialog.png)
+
+![プロジェクト管理と ELN](screenshots/01-projects.png)
 
 ## できること
 

@@ -27,13 +27,25 @@
 
 ## Schermafbeeldingen
 
-![Projectbeheer en ELN](screenshots/01-projects.png)
+![Geninformatie en kruisbron-annotaties](screenshots/gene-detail.png)
+
+![Vectorenbibliotheek](screenshots/02-vectors.png)
 
 ![Vectorkaart en sequentie-editor](screenshots/03-vector-editor.png)
 
 ![Kloneringsworkflow](screenshots/06-workflow.png)
 
 ![Primerbibliotheek](screenshots/05-primers.png)
+
+![Restrictie-enzymbibliotheek](screenshots/08-enzymes.png)
+
+![Eiwitstructuurbibliotheek](screenshots/protein-library.png)
+
+![3D-eiwitstructuurviewer](screenshots/protein-structure.png)
+
+![SWISS-MODEL-structuurvoorspelling](screenshots/swissmodel-dialog.png)
+
+![Projectbeheer en ELN](screenshots/01-projects.png)
 
 ## Wat kun je ermee doen
 

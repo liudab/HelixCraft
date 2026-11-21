@@ -26,13 +26,25 @@
 
 ## Tangkapan layar
 
-![Manajemen proyek dan ELN](screenshots/01-projects.png)
+![Informasi gen dan anotasi lintas sumber](screenshots/gene-detail.png)
+
+![Pustaka vektor](screenshots/02-vectors.png)
 
 ![Peta vektor dan editor urutan](screenshots/03-vector-editor.png)
 
 ![Alur kerja kloning](screenshots/06-workflow.png)
 
 ![Pustaka primer](screenshots/05-primers.png)
+
+![Pustaka enzim restriksi](screenshots/08-enzymes.png)
+
+![Pustaka struktur protein](screenshots/protein-library.png)
+
+![Penampil struktur protein 3D](screenshots/protein-structure.png)
+
+![Prediksi struktur SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![Manajemen proyek dan ELN](screenshots/01-projects.png)
 
 ## Apa yang bisa Anda lakukan dengan HelixCraft?
 

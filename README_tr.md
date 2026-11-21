@@ -26,13 +26,25 @@
 
 ## Ekran görüntüleri
 
-![Proje yönetimi ve ELN](screenshots/01-projects.png)
+![Gen bilgisi ve kaynaklar arası açıklamalar](screenshots/gene-detail.png)
+
+![Vektör kütüphanesi](screenshots/02-vectors.png)
 
 ![Vektör haritası ve dizi düzenleyici](screenshots/03-vector-editor.png)
 
 ![Klonlama iş akışı](screenshots/06-workflow.png)
 
 ![Primer kütüphanesi](screenshots/05-primers.png)
+
+![Restriksiyon enzimi kütüphanesi](screenshots/08-enzymes.png)
+
+![Protein yapı kütüphanesi](screenshots/protein-library.png)
+
+![3D protein yapı görüntüleyici](screenshots/protein-structure.png)
+
+![SWISS-MODEL yapı tahmini](screenshots/swissmodel-dialog.png)
+
+![Proje yönetimi ve ELN](screenshots/01-projects.png)
 
 ## Neler yapabilirsiniz?
 

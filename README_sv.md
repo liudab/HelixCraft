@@ -26,13 +26,25 @@
 
 ## Skärmbilder
 
-![Projektledning och ELN](screenshots/01-projects.png)
+![Geninformation och korsannoteringar](screenshots/gene-detail.png)
+
+![Vektorbibliotek](screenshots/02-vectors.png)
 
 ![Vektorkarta och sekvensredigerare](screenshots/03-vector-editor.png)
 
 ![Kloningsarbetsflöde](screenshots/06-workflow.png)
 
 ![Primerbibliotek](screenshots/05-primers.png)
+
+![Restriktionsenzymbibliotek](screenshots/08-enzymes.png)
+
+![Proteinstructurbibliotek](screenshots/protein-library.png)
+
+![3D-proteinvisare](screenshots/protein-structure.png)
+
+![SWISS-MODEL-strukturprediktion](screenshots/swissmodel-dialog.png)
+
+![Projektledning och ELN](screenshots/01-projects.png)
 
 ## Vad du kan använda den till
 

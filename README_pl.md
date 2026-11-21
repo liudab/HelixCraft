@@ -26,13 +26,25 @@
 
 ## Zrzuty ekranu
 
-![Zarządzanie projektami i ELN](screenshots/01-projects.png)
+![Informacje o genach i adnotacje krzyżowe](screenshots/gene-detail.png)
+
+![Biblioteka wektorów](screenshots/02-vectors.png)
 
 ![Mapa wektora i edytor sekwencji](screenshots/03-vector-editor.png)
 
 ![Przepływ klonowania](screenshots/06-workflow.png)
 
 ![Biblioteka starterów](screenshots/05-primers.png)
+
+![Biblioteka enzymów restrykcyjnych](screenshots/08-enzymes.png)
+
+![Biblioteka struktur białek](screenshots/protein-library.png)
+
+![Przeglądarka struktur białek 3D](screenshots/protein-structure.png)
+
+![Predykcja struktury SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![Zarządzanie projektami i ELN](screenshots/01-projects.png)
 
 ## Co możesz z nim robić
 

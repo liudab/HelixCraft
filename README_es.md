@@ -26,13 +26,25 @@ Software de escritorio de ingeniería genética asistido por IA · AI-powered ge
 
 ## Capturas de pantalla
 
-![Gestión de proyectos y ELN](screenshots/01-projects.png)
+![Información génica y anotaciones cruzadas](screenshots/gene-detail.png)
+
+![Biblioteca de vectores](screenshots/02-vectors.png)
 
 ![Mapa del vector y editor de secuencia](screenshots/03-vector-editor.png)
 
 ![Flujo de clonación](screenshots/06-workflow.png)
 
 ![Biblioteca de cebadores](screenshots/05-primers.png)
+
+![Biblioteca de enzimas de restricción](screenshots/08-enzymes.png)
+
+![Biblioteca de estructuras proteicas](screenshots/protein-library.png)
+
+![Visor 3D de proteínas](screenshots/protein-structure.png)
+
+![Predicción de estructura SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![Gestión de proyectos y ELN](screenshots/01-projects.png)
 
 ## ¿Qué puedes hacer con HelixCraft?
 

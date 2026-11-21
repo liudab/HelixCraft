@@ -28,13 +28,25 @@
 
 ## 스크린샷
 
-![프로젝트 관리 및 ELN](screenshots/01-projects.png)
+![유전자 정보 및 교차 소스 주석](screenshots/gene-detail.png)
+
+![벡터 라이브러리](screenshots/02-vectors.png)
 
 ![벡터 맵 및 서열 편집기](screenshots/03-vector-editor.png)
 
 ![클로닝 워크플로](screenshots/06-workflow.png)
 
 ![프라이머 라이브러리](screenshots/05-primers.png)
+
+![제한효소 라이브러리](screenshots/08-enzymes.png)
+
+![단백질 구조 라이브러리](screenshots/protein-library.png)
+
+![단백질 3D 구조 뷰어](screenshots/protein-structure.png)
+
+![SWISS-MODEL 구조 예측](screenshots/swissmodel-dialog.png)
+
+![프로젝트 관리 및 ELN](screenshots/01-projects.png)
 
 ## 주요 활용 시나리오
 

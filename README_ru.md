@@ -26,13 +26,25 @@
 
 ## Скриншоты
 
-![Управление проектами и ELN](screenshots/01-projects.png)
+![Генная информация и кросс-аннотации](screenshots/gene-detail.png)
+
+![Библиотека векторов](screenshots/02-vectors.png)
 
 ![Карта вектора и редактор последовательности](screenshots/03-vector-editor.png)
 
 ![Рабочий процесс клонирования](screenshots/06-workflow.png)
 
 ![Библиотека праймеров](screenshots/05-primers.png)
+
+![Библиотека рестриктаз](screenshots/08-enzymes.png)
+
+![Библиотека структур белков](screenshots/protein-library.png)
+
+![3D-просмотрщик структур белков](screenshots/protein-structure.png)
+
+![Предсказание структуры SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![Управление проектами и ELN](screenshots/01-projects.png)
 
 ## Что можно делать с помощью HelixCraft
 

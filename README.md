@@ -44,13 +44,25 @@ HelixCraft 是一款面向分子生物学与基因工程研究的桌面软件，
 
 ## 界面截图
 
-![项目管理与 ELN](screenshots/01-projects.png)
+![基因信息与跨源注释](screenshots/gene-detail.png)
+
+![载体数据库](screenshots/02-vectors.png)
 
 ![载体图谱与序列编辑](screenshots/03-vector-editor.png)
 
 ![克隆工作流](screenshots/06-workflow.png)
 
 ![引物数据库](screenshots/05-primers.png)
+
+![内切酶库](screenshots/08-enzymes.png)
+
+![蛋白结构库](screenshots/protein-library.png)
+
+![蛋白三维结构查看](screenshots/protein-structure.png)
+
+![SWISS-MODEL 结构预测](screenshots/swissmodel-dialog.png)
+
+![项目管理与 ELN](screenshots/01-projects.png)
 
 ## 目录
 

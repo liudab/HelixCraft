@@ -26,13 +26,25 @@
 
 ## ภาพหน้าจอ
 
-![การจัดการโปรเจกต์และ ELN](screenshots/01-projects.png)
+![ข้อมูลยีนและคำอธิบายข้ามแหล่ง](screenshots/gene-detail.png)
+
+![ไลบรารีเวกเตอร์](screenshots/02-vectors.png)
 
 ![แผนที่เวกเตอร์และตัวแก้ไขลำดับ](screenshots/03-vector-editor.png)
 
 ![เวิร์กโฟลว์โคลนนิ่ง](screenshots/06-workflow.png)
 
 ![ไลบรารีไพรเมอร์](screenshots/05-primers.png)
+
+![ไลบรารีเอนไซม์ตัดจำเพาะ](screenshots/08-enzymes.png)
+
+![ไลบรารีโครงสร้างโปรตีน](screenshots/protein-library.png)
+
+![ตัวดูโครงสร้างโปรตีน 3 มิติ](screenshots/protein-structure.png)
+
+![การทำนายโครงสร้าง SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![การจัดการโปรเจกต์และ ELN](screenshots/01-projects.png)
 
 ## ใช้ทำอะไรได้บ้าง
 

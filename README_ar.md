@@ -26,13 +26,25 @@
 
 ## لقطات الشاشة
 
-![إدارة المشروع وELN](screenshots/01-projects.png)
+![معلومات الجينات والتعليقات المتقاطعة](screenshots/gene-detail.png)
+
+![مكتبة النواقل](screenshots/02-vectors.png)
 
 ![خريطة الناقل ومحرر التسلسل](screenshots/03-vector-editor.png)
 
 ![سير عمل الاستنساخ](screenshots/06-workflow.png)
 
 ![مكتبة البادئات](screenshots/05-primers.png)
+
+![مكتبة إنزيمات القطع](screenshots/08-enzymes.png)
+
+![مكتبة بنى البروتين](screenshots/protein-library.png)
+
+![عارض البنية ثلاثية الأبعاد للبروتين](screenshots/protein-structure.png)
+
+![التنبؤ بالبنية عبر SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![إدارة المشروع وELN](screenshots/01-projects.png)
 
 ## ما الذي يمكنك فعله به
 

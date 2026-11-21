@@ -28,13 +28,25 @@
 
 ## Snímky obrazovky
 
-![Řízení projektů a ELN](screenshots/01-projects.png)
+![Informace o genech a křížové anotace](screenshots/gene-detail.png)
+
+![Knihovna vektorů](screenshots/02-vectors.png)
 
 ![Mapa vektoru a editor sekvence](screenshots/03-vector-editor.png)
 
 ![Klonovací workflow](screenshots/06-workflow.png)
 
 ![Knihovna primerů](screenshots/05-primers.png)
+
+![Knihovna restrikčních enzymů](screenshots/08-enzymes.png)
+
+![Knihovna proteinových struktur](screenshots/protein-library.png)
+
+![3D prohlížeč proteinů](screenshots/protein-structure.png)
+
+![Predikce struktury SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![Řízení projektů a ELN](screenshots/01-projects.png)
 
 ## K čemu se hodí
 

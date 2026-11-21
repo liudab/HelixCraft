@@ -26,13 +26,25 @@ Software desktop di supporto all'ingegneria genetica basato sull'IA · AI-powere
 
 ## Screenshot
 
-![Gestione progetti ed ELN](screenshots/01-projects.png)
+![Informazioni genetiche e annotazioni incrociate](screenshots/gene-detail.png)
+
+![Libreria vettori](screenshots/02-vectors.png)
 
 ![Mappa del vettore ed editor di sequenza](screenshots/03-vector-editor.png)
 
 ![Workflow di clonaggio](screenshots/06-workflow.png)
 
 ![Libreria primer](screenshots/05-primers.png)
+
+![Libreria enzimi di restrizione](screenshots/08-enzymes.png)
+
+![Libreria strutture proteiche](screenshots/protein-library.png)
+
+![Visualizzatore 3D di proteine](screenshots/protein-structure.png)
+
+![Previsione struttura SWISS-MODEL](screenshots/swissmodel-dialog.png)
+
+![Gestione progetti ed ELN](screenshots/01-projects.png)
 
 ## Cosa puoi fare con HelixCraft
 
